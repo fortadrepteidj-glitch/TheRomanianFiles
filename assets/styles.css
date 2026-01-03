@@ -1,3 +1,6 @@
+/* ===============================
+   VARIABILE
+================================ */
 :root{
   --bg:#0B0D14;
   --panel:#101426;
@@ -6,7 +9,15 @@
   --line:#222A3F;
 
   --accent:#7C3AED;
-  --accent2:#8B5CF6;
+  --accent-hover:#6D28D9;
+  --accent-soft:#8B5CF6;
+}
+
+/* ===============================
+   RESET + BODY
+================================ */
+*{
+  box-sizing:border-box;
 }
 
 body{
@@ -16,110 +27,151 @@ body{
   color:var(--text);
 }
 
-a{color:var(--text);text-decoration:none}
-
-.header{
-  border-bottom:1px solid var(--line);
-  padding:14px 0;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
-.wrap{max-width:1100px;margin:0 auto;padding:20px}
-
-.brand{display:flex;align-items:center;gap:10px;font-weight:900}
-.brand__dot{width:10px;height:10px;background:var(--accent);border-radius:50%}
-
-.nav a{margin-left:14px;color:var(--muted)}
-.nav a:hover{color:var(--accent2)}
-
-.hero h1{font-size:36px}
-.lead{color:var(--muted);max-width:70ch}
-
-.footer{
-  margin-top:40px;
-  padding-top:20px;
-  border-top:1px solid var(--line);
-  color:var(--muted);
+/* ===============================
+   CONTAINER
+================================ */
+.wrap{
+  width:min(1120px, calc(100% - 48px));
+  margin:0 auto;
 }
-.brand__logo{
-  height: 28px;
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-/* ====== TOP BAR (antet alb) ====== */
+
+/* ===============================
+   HEADER (ANTET ALB)
+================================ */
 .site-header{
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  background:#ffffff;
+  border-bottom:1px solid #e5e7eb;
 }
 
 .site-header .header__inner{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 14px;
-  padding: 14px 0;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:14px 0;
 }
 
-/* Brand (numele site-ului) în banda albă */
+/* LOGO */
+.brand__logo{
+  height:28px;
+  width:auto;
+  display:block;
+}
+
+/* BRAND TEXT */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+}
+
 .brand__name{
-  color: #0b0f19; /* aproape negru */
+  color:#0b0f19;
+  font-size:18px;
+  letter-spacing:.2px;
 }
 
-/* Dacă ai bulina/punctul, îl poți ascunde sau îl faci mov mic */
+/* scoatem bulina – arată mai profesionist */
 .brand__dot{
-  background: #7c3aed;
+  display:none;
 }
 
-/* ====== NAV: butoane mov cu text alb ====== */
+/* ===============================
+   NAV – BUTOANE MOV
+================================ */
 .nav{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-left: auto; /* împinge meniul în dreapta */
+  margin-left:auto;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
 .nav a{
-  background: #7c3aed;     /* mov */
-  color: #ffffff;          /* text alb */
-  text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 10px;
-  font-weight: 600;
-  line-height: 1;
-  border: 1px solid rgba(124,58,237,.25);
-  transition: transform .12s ease, background .12s ease, opacity .12s ease;
+  background:var(--accent);
+  color:#ffffff;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:600;
+  line-height:1;
+  border:1px solid rgba(124,58,237,.25);
+  transition:background .15s ease, transform .15s ease;
 }
 
 .nav a:hover{
-  background: #6d28d9;     /* mov mai închis */
-  transform: translateY(-1px);
+  background:var(--accent-hover);
+  transform:translateY(-1px);
 }
 
 .nav a.active{
-  background: #5b21b6;     /* și mai accentuat pentru pagina curentă */
+  background:#5b21b6;
 }
 
-/* Scoatem underline-ul/linia de la varianta veche (dacă exista) */
-.nav a::after{
-  display: none !important;
-}
-
-/* ====== CONTAINER responsive (desktop fix) ====== */
-.wrap{
-  width: min(1120px, calc(100% - 48px)); /* mai lat pe desktop */
-  margin: 0 auto;
-}
-
-/* Hero să arate bine pe desktop */
+/* ===============================
+   HERO
+================================ */
 .hero{
-  padding: 56px 0;
+  padding:56px 0;
 }
 
-/* Pe ecrane foarte mari, mai mult spațiu */
-@media (min-width: 1200px){
+.kicker{
+  color:var(--muted);
+  letter-spacing:.12em;
+  font-size:12px;
+  margin-bottom:12px;
+}
+
+.hero h1{
+  font-size:42px;
+  line-height:1.15;
+  margin:0 0 16px;
+}
+
+.lead{
+  color:var(--muted);
+  max-width:70ch;
+  font-size:18px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer{
+  margin-top:60px;
+  padding:24px 0;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ===============================
+   DESKTOP LARGE
+================================ */
+@media (min-width:1200px){
   .hero{
-    padding: 72px 0;
+    padding:72px 0;
+  }
+
+  .hero h1{
+    font-size:48px;
   }
 }
 
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width:640px){
+  .site-header .header__inner{
+    flex-wrap:wrap;
+  }
+
+  .nav{
+    width:100%;
+    margin-left:0;
+    justify-content:flex-start;
+  }
+}
