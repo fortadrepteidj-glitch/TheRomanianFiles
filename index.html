@@ -7,28 +7,37 @@
   <meta name="description" content="Investigații jurnalistice și documente din surse publice." />
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
-<body>
-  <header class="site-header">
-  <a href="/" class="logo-link">
-    <img src="/assets/logo.png" alt="The Romanian Files" class="site-logo">
-  </a>
-</header>
 
-  <header class="header">
+<body>
+
+  <!-- HEADER UNIC: logo + brand + navigație -->
+  <header class="site-header">
     <div class="wrap header__inner">
+
+      <a href="/" class="logo-link">
+        <img
+          src="/assets/descărcare.svg"
+          alt="The Romanian Files"
+          class="site-logo"
+        />
+      </a>
+
       <a class="brand" href="/">
         <span class="brand__dot"></span>
         <span class="brand__name">The Romanian Files</span>
       </a>
+
       <nav class="nav">
         <a href="/investigatii/">Investigații</a>
         <a href="/documente/">Documente</a>
         <a href="/metodologie/">Metodologie</a>
         <a href="/drept-la-replica/">Drept la replică</a>
       </nav>
+
     </div>
   </header>
 
+  <!-- CONȚINUT -->
   <main class="wrap">
     <section class="hero">
       <p class="kicker">PUBLICAȚIE INDEPENDENTĂ</p>
@@ -38,12 +47,16 @@
         Fără verdicte penale — doar fapte, cronologii și documente.
       </p>
     </section>
-
-    <footer class="footer">
-      <p>© <span id="y"></span> The Romanian Files</p>
-    </footer>
   </main>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="y"></span> The Romanian Files</p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
