@@ -1,0 +1,27 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <rect width="1024" height="1024" fill="none"></rect>
+
+  <!-- Lines flanking "THE" -->
+  <line x1="120" y1="300" x2="420" y2="300" stroke="#4B2E83" stroke-width="12"></line>
+  <line x1="604" y1="300" x2="904" y2="300" stroke="#4B2E83" stroke-width="12"></line>
+
+  <!-- "THE" text -->
+  <text x="512" y="280" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="96" font-weight="600" fill="#4B2E83">
+    THE
+  </text>
+
+  <!-- "ROMANIAN FILES" main text -->
+  <text x="512" y="460" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="140" font-weight="700" fill="#4B2E83">
+    ROMANIAN
+  </text>
+  <text x="512" y="620" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="140" font-weight="700" fill="#4B2E83">
+    FILES
+  </text>
+
+  <!-- Underline below main text -->
+  <line x1="150" y1="680" x2="874" y2="680" stroke="#4B2E83" stroke-width="10"></line>
+
+  <!-- Folded corner effect -->
+  <polygon points="850,150 980,150 980,280" fill="#4B2E83"></polygon>
+</svg>
