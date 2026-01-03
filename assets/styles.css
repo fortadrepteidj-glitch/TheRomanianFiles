@@ -47,4 +47,79 @@ a{color:var(--text);text-decoration:none}
   vertical-align: middle;
   margin-right: 10px;
 }
+/* ====== TOP BAR (antet alb) ====== */
+.site-header{
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.site-header .header__inner{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+}
+
+/* Brand (numele site-ului) în banda albă */
+.brand__name{
+  color: #0b0f19; /* aproape negru */
+}
+
+/* Dacă ai bulina/punctul, îl poți ascunde sau îl faci mov mic */
+.brand__dot{
+  background: #7c3aed;
+}
+
+/* ====== NAV: butoane mov cu text alb ====== */
+.nav{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: auto; /* împinge meniul în dreapta */
+}
+
+.nav a{
+  background: #7c3aed;     /* mov */
+  color: #ffffff;          /* text alb */
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid rgba(124,58,237,.25);
+  transition: transform .12s ease, background .12s ease, opacity .12s ease;
+}
+
+.nav a:hover{
+  background: #6d28d9;     /* mov mai închis */
+  transform: translateY(-1px);
+}
+
+.nav a.active{
+  background: #5b21b6;     /* și mai accentuat pentru pagina curentă */
+}
+
+/* Scoatem underline-ul/linia de la varianta veche (dacă exista) */
+.nav a::after{
+  display: none !important;
+}
+
+/* ====== CONTAINER responsive (desktop fix) ====== */
+.wrap{
+  width: min(1120px, calc(100% - 48px)); /* mai lat pe desktop */
+  margin: 0 auto;
+}
+
+/* Hero să arate bine pe desktop */
+.hero{
+  padding: 56px 0;
+}
+
+/* Pe ecrane foarte mari, mai mult spațiu */
+@media (min-width: 1200px){
+  .hero{
+    padding: 72px 0;
+  }
+}
 
