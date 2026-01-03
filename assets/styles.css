@@ -40,3 +40,11 @@ a{color:var(--text);text-decoration:none}
   border-top:1px solid var(--line);
   color:var(--muted);
 }
+.brand__logo{
+  height: 28px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
