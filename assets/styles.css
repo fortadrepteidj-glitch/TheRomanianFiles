@@ -190,3 +190,59 @@ main{
     font-size:16px;
   }
 }
+/* ===============================
+   INVESTIGAȚIE – HERO FULL NEGRU
+   (lipește la FINAL în styles.css)
+================================ */
+
+.story-hero{
+  background: #0B0D14;           /* negrul site-ului */
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding: 36px 0 28px;
+}
+
+.story-hero__kicker{
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.72);
+}
+
+.story-hero__title{
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 900;
+  color: #ffffff;
+  max-width: 26ch;              /* arată “editorial”, ca la publicații */
+}
+
+.story-hero__badge{
+  display: inline-flex;
+  align-items: center;
+  margin-top: 16px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--accent);     /* mov plin */
+  color: #ffffff;                /* text alb */
+  font-weight: 700;
+  font-size: 13px;
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+.story-hero__badge:hover{
+  background: var(--accent-hover);
+}
+
+/* Responsive */
+@media (max-width: 640px){
+  .story-hero{
+    padding: 26px 0 20px;
+  }
+  .story-hero__title{
+    font-size: 28px;
+    max-width: 100%;
+  }
+}
