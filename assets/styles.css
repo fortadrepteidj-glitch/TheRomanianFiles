@@ -175,3 +175,34 @@ a{
     justify-content:flex-start;
   }
 }
+/* =========================
+   LAYOUT FIX (desktop + footer corect)
+   pune blocul ăsta LA FINAL
+   ========================= */
+
+.page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main{
+  flex: 1;
+}
+
+/* hero mai aerisit și controlat pe desktop */
+.hero{
+  padding: 56px 0;
+}
+
+@media (min-width: 1024px){
+  .hero{
+    padding: 72px 0;
+  }
+}
+
+/* footer să stea jos frumos și să nu mai arate “pierdut” */
+.footer{
+  margin-top: 0;
+  padding: 18px 0 28px;
+}
