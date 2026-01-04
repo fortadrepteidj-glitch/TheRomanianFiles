@@ -12,54 +12,57 @@
 
   <header class="site-header">
     <div class="wrap header__inner">
-      <a href="/" class="brand">
+
+      <a href="/" class="logo-link" aria-label="The Romanian Files - Acasă">
         <img src="/assets/logo.svg" alt="The Romanian Files" class="brand__logo" />
+      </a>
+
+      <a class="brand" href="/">
         <span class="brand__name">The Romanian Files</span>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Navigație principală">
         <a href="/investigatii/" class="active">Investigații</a>
         <a href="/documente/">Documente</a>
         <a href="/metodologie/">Metodologie</a>
         <a href="/drept-la-replica/">Drept la replică</a>
       </nav>
+
     </div>
   </header>
 
   <main class="wrap main">
-    <header class="page-head">
-      <h1>Investigații</h1>
-      <p class="page-subtitle">Investigații jurnalistice bazate pe fapte, cronologii și documente publice.</p>
-    </header>
 
-    <section class="investigation-grid">
+    <section class="section">
+      <h1 class="page-title">Investigații</h1>
 
-      <!-- CARD 1 -->
-      <article class="investigation-card">
-        <a class="card-link" href="/investigatii/baciuna.html">
-          <div class="card-thumb">
-            <img src="/assets/img/baciuna.jpg" alt="Diana și Lucian Baciuna" loading="lazy" />
-          </div>
+      <div class="cards">
+        <article class="card">
+          <a class="card__link" href="/investigatii/baciuna.html">
+            <div class="card__media">
+              <img
+                src="/assets/img/baciuna.jpeg"
+                alt="Diana și Lucian Baciuna"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
 
-          <div class="card-body">
-            <p class="card-kicker">INVESTIGAȚIE</p>
-            <h2 class="card-title">Nepotism și conflicte de interese: cazul Dianei și lui Lucian Baciuna</h2>
-            <p class="card-excerpt">
-              O investigație despre numiri politice, cumul de funcții, posibile incompatibilități și rețele de influență.
-            </p>
-            <span class="card-cta">Citește investigația →</span>
-          </div>
-        </a>
-      </article>
+            <div class="card__body">
+              <p class="card__tag">INVESTIGAȚIE</p>
+              <h2 class="card__title">Nepotism și conflicte de interese: cazul Dianei și lui Lucian Baciuna</h2>
+              <p class="card__excerpt">
+                O investigație despre numiri politice, cumul de funcții, posibile incompatibilități și rețele de influență din jurul PNL.
+              </p>
+              <span class="card__cta">Citește investigația →</span>
+            </div>
+          </a>
+        </article>
+      </div>
 
-      <!-- Când adaugi încă o investigație:
-           copiezi tot <article>…</article> și schimbi:
-           - href
-           - imaginea
-           - titlu + excerpt
-      -->
-
+      <!-- Când adaugi încă una: copiezi <article class="card"> ... </article> -->
     </section>
+
   </main>
 
   <footer class="footer">
