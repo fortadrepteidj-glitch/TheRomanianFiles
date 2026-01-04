@@ -246,3 +246,65 @@ main{
     max-width: 100%;
   }
 }
+/* ============ RESPONSIVE CORE ============ */
+
+/* 1) Nu lăsa nimic să iasă din ecran */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 2) Linkuri lungi / URL-uri să se rupă frumos */
+a, .ref-url, p, li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 3) Dacă ai tabele (în investigații apar des) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 4) Padding adaptiv pe wrap */
+.wrap {
+  padding-left: clamp(14px, 3.5vw, 18px);
+  padding-right: clamp(14px, 3.5vw, 18px);
+}
+
+/* 5) Titluri responsive (scalare fluidă) */
+h1 {
+  font-size: clamp(1.85rem, 4.8vw, 2.55rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3.6vw, 1.55rem);
+}
+
+/* 6) Textul să fie ușor de citit pe mobil */
+p {
+  font-size: clamp(1.02rem, 2.8vw, 1.075rem);
+  line-height: 1.78;
+}
+
+/* 7) Cuprinsul să nu pară înghesuit pe mobil */
+.toc {
+  padding: clamp(16px, 3vw, 20px);
+}
+
+/* 8) Mic tweak pentru header pe ecrane mici */
+@media (max-width: 640px){
+  .story-head{
+    padding: 34px 0 24px;
+  }
+  .kicker{
+    font-size: .75rem;
+  }
+  .meta-chip{
+    font-size: .9rem;
+    padding: 7px 11px;
+  }
+}
