@@ -2,30 +2,27 @@
 <html lang="ro">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>The Romanian Files</title>
   <meta name="description" content="Investigații jurnalistice și documente din surse publice." />
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 
-<body>
+<body class="page">
 
-  <!-- HEADER: logo + nume + navigație -->
+  <!-- HEADER: bandă albă + logo + meniu -->
   <header class="site-header">
     <div class="wrap header__inner">
 
-      <!-- BRAND UNIC -->
+      <a href="/" class="logo-link" aria-label="The Romanian Files - Acasă">
+        <img src="/assets/logo.svg" alt="The Romanian Files" class="brand__logo" />
+      </a>
+
       <a class="brand" href="/">
-        <img
-          src="/assets/logo.svg"
-          alt="The Romanian Files"
-          class="brand__logo"
-        />
         <span class="brand__name">The Romanian Files</span>
       </a>
 
-      <!-- NAVIGAȚIE -->
-      <nav class="nav">
+      <nav class="nav" aria-label="Navigație principală">
         <a href="/investigatii/">Investigații</a>
         <a href="/documente/">Documente</a>
         <a href="/metodologie/">Metodologie</a>
@@ -35,11 +32,13 @@
     </div>
   </header>
 
-  <!-- CONȚINUT -->
-  <main class="wrap">
+  <!-- MAIN -->
+  <main class="wrap main">
     <section class="hero">
       <p class="kicker">PUBLICAȚIE INDEPENDENTĂ</p>
+
       <h1>Investigații jurnalistice din surse publice.</h1>
+
       <p class="lead">
         Documentăm rețele de influență, numiri politice și posibile conflicte de interese.
         Fără verdicte penale — doar fapte, cronologii și documente.
@@ -47,9 +46,11 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (centrat corect) -->
   <footer class="footer">
-    <p>© <span id="y"></span> The Romanian Files</p>
+    <div class="wrap">
+      <p>© <span id="y"></span> The Romanian Files</p>
+    </div>
   </footer>
 
   <script>
