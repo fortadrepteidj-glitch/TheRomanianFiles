@@ -34,8 +34,6 @@
 
   <!-- MAIN -->
   <main class="wrap main">
-
-    <!-- HERO -->
     <section class="hero">
       <p class="kicker">PUBLICAȚIE INDEPENDENTĂ</p>
 
@@ -47,31 +45,40 @@
       </p>
     </section>
 
-    <!-- ULTIMA INVESTIGAȚIE (featured) -->
-    <section class="featured">
-      <h2 class="featured-title">Ultima investigație</h2>
+    <!-- ULTIMA INVESTIGAȚIE (card) -->
+    <section class="section">
+      <h2 class="section__title">Ultima investigație</h2>
 
-      <article class="investigation-card featured-card">
-        <a class="card-link" href="/investigatii/baciuna.html">
-          <div class="card-thumb">
-            <img src="/assets/img/baciuna.jpg" alt="Diana și Lucian Baciuna" loading="lazy" />
+      <article class="card">
+        <a class="card__link" href="/investigatii/baciuna.html">
+          <div class="card__media">
+            <img
+              src="/assets/img/baciuna.jpeg"
+              alt="Diana și Lucian Baciuna"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
 
-          <div class="card-body">
-            <p class="card-kicker">INVESTIGAȚIE</p>
-            <h3 class="card-title">Nepotism și conflicte de interese: cazul Dianei și lui Lucian Baciuna</h3>
-            <p class="card-excerpt">
+          <div class="card__body">
+            <p class="card__tag">INVESTIGAȚIE</p>
+            <h3 class="card__title">Nepotism și conflicte de interese: cazul Dianei și lui Lucian Baciuna</h3>
+            <p class="card__excerpt">
               O investigație despre numiri politice, cumul de funcții, posibile incompatibilități și rețele de influență.
             </p>
-            <span class="card-cta">Citește investigația →</span>
+            <span class="card__cta">Citește investigația →</span>
           </div>
         </a>
       </article>
+
+      <p class="section__more">
+        <a class="more-link" href="/investigatii/">Vezi toate investigațiile →</a>
+      </p>
     </section>
 
   </main>
 
-  <!-- FOOTER (centrat corect) -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="wrap">
       <p>© <span id="y"></span> The Romanian Files</p>
