@@ -10,27 +10,29 @@
 
   --accent:#7C3AED;
   --accent-hover:#6D28D9;
-  --accent-soft:#8B5CF6;
+  --accent-strong:#5B21B6;
 }
 
 /* ===============================
-   RESET + BODY
+   RESET + BAZĂ
 ================================ */
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
+
+html, body{ height:100%; }
 
 body{
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:var(--bg);
   color:var(--text);
+
+  /* IMPORTANT: layout fix global (nu depinde de .page) */
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
+a{ color:inherit; text-decoration:none; }
 
 /* ===============================
    CONTAINER
@@ -62,7 +64,7 @@ a{
   display:block;
 }
 
-/* BRAND TEXT */
+/* BRAND */
 .brand{
   display:flex;
   align-items:center;
@@ -76,10 +78,8 @@ a{
   letter-spacing:.2px;
 }
 
-/* scoatem bulina – arată mai profesionist */
-.brand__dot{
-  display:none;
-}
+/* scoatem bulina */
+.brand__dot{ display:none; }
 
 /* ===============================
    NAV – BUTOANE MOV
@@ -108,7 +108,14 @@ a{
 }
 
 .nav a.active{
-  background:#5b21b6;
+  background:var(--accent-strong);
+}
+
+/* ===============================
+   MAIN (împinge footer jos)
+================================ */
+main{
+  flex:1; /* IMPORTANT: footer jos mereu */
 }
 
 /* ===============================
@@ -122,7 +129,7 @@ a{
   color:var(--muted);
   letter-spacing:.12em;
   font-size:12px;
-  margin-bottom:12px;
+  margin:0 0 12px;
 }
 
 .hero h1{
@@ -135,14 +142,15 @@ a{
   color:var(--muted);
   max-width:70ch;
   font-size:18px;
+  margin:0;
 }
 
 /* ===============================
    FOOTER
 ================================ */
 .footer{
-  margin-top:60px;
-  padding:24px 0;
+  margin-top:0;              /* IMPORTANT */
+  padding:18px 0 28px;       /* IMPORTANT */
   border-top:1px solid var(--line);
   color:var(--muted);
   font-size:14px;
@@ -152,13 +160,8 @@ a{
    DESKTOP LARGE
 ================================ */
 @media (min-width:1200px){
-  .hero{
-    padding:72px 0;
-  }
-
-  .hero h1{
-    font-size:48px;
-  }
+  .hero{ padding:72px 0; }
+  .hero h1{ font-size:48px; }
 }
 
 /* ===============================
@@ -174,35 +177,16 @@ a{
     margin-left:0;
     justify-content:flex-start;
   }
-}
-/* =========================
-   LAYOUT FIX (desktop + footer corect)
-   pune blocul ăsta LA FINAL
-   ========================= */
 
-.page{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.main{
-  flex: 1;
-}
-
-/* hero mai aerisit și controlat pe desktop */
-.hero{
-  padding: 56px 0;
-}
-
-@media (min-width: 1024px){
-  .hero{
-    padding: 72px 0;
+  .wrap{
+    width:min(1120px, calc(100% - 28px));
   }
-}
 
-/* footer să stea jos frumos și să nu mai arate “pierdut” */
-.footer{
-  margin-top: 0;
-  padding: 18px 0 28px;
+  .hero h1{
+    font-size:34px;
+  }
+
+  .lead{
+    font-size:16px;
+  }
 }
