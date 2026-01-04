@@ -8,51 +8,71 @@
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 
-<body>
+<body class="page">
 
-<header class="site-header">
-  <div class="wrap header__inner">
-    <a href="/" class="brand">
-      <span class="brand__name">The Romanian Files</span>
-    </a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="wrap header__inner">
 
-    <nav class="nav">
-      <a href="/investigatii/" class="active">Investigații</a>
-      <a href="/documente/">Documente</a>
-      <a href="/metodologie/">Metodologie</a>
-      <a href="/drept-la-replica/">Drept la replică</a>
-    </nav>
-  </div>
-</header>
+      <a href="/" class="brand">
+        <span class="brand__name">The Romanian Files</span>
+      </a>
 
-<main class="wrap">
+      <nav class="nav">
+        <a href="/investigatii/" class="active">Investigații</a>
+        <a href="/documente/">Documente</a>
+        <a href="/metodologie/">Metodologie</a>
+        <a href="/drept-la-replica/">Drept la replică</a>
+      </nav>
 
-  <h1>Investigații</h1>
+    </div>
+  </header>
 
-  <!-- CARD INVESTIGAȚIE -->
-  <article class="investigation-card">
-    <a href="/investigatii/baciuna.html">
-      <h2>Nepotism și conflicte de interese: cazul Dianei și lui Lucian Baciuna</h2>
-      <p>
-        O investigație despre numiri politice, cumul de funcții,
-        posibile incompatibilități și rețele de influență din jurul PNL.
-      </p>
-      <span class="read-more">Citește investigația →</span>
-    </a>
-  </article>
+  <!-- MAIN -->
+  <main class="main">
+    <div class="wrap">
 
-  <!-- AICI VEI MAI ADĂUGA INVESTIGAȚII -->
-  <!-- copiezi <article> și schimbi link + titlu -->
+      <section class="hero">
+        <h1>Investigații</h1>
+        <p class="lead">
+          Investigații jurnalistice realizate exclusiv pe baza documentelor
+          publice, cronologiilor și faptelor verificabile.
+        </p>
+      </section>
 
-</main>
+      <!-- CARD INVESTIGAȚIE -->
+      <article class="investigation-card">
+        <a href="/investigatii/baciuna.html">
+          <h2>
+            Nepotism și conflicte de interese: cazul Dianei și lui Lucian Băciună
+          </h2>
+          <p>
+            O investigație despre numiri politice, cumul de funcții,
+            posibile incompatibilități și rețele de influență din jurul PNL.
+          </p>
+          <span class="read-more">Citește investigația →</span>
+        </a>
+      </article>
 
-<footer class="footer">
-  <p>© <span id="y"></span> The Romanian Files</p>
-</footer>
+      <!--
+        Pentru o nouă investigație:
+        1. Copiezi tot <article>...</article>
+        2. Schimbi link-ul și titlul
+      -->
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <p>© <span id="y"></span> The Romanian Files</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
