@@ -12,14 +12,21 @@
 
   <style>
     :root{
-      --accent:#5b2d8b;      /* violet sobru */
+      /* MOVUL DIN SITE (accent) */
+      --accent:#7C3AED;
+      --accent-hover:#6D28D9;
+
       --text:#111;
       --muted:#555;
       --rule:#eaeaea;
       --bg:#ffffff;
+
       --chip:#f6f1fb;
       --chipBorder:#e5d6fb;
       --soft:#fafafa;
+
+      --black:#0B0D14;
+      --white:#ffffff;
     }
 
     *{ box-sizing:border-box; }
@@ -46,8 +53,22 @@
       padding:54px 18px 110px;
     }
 
+    /* =========================
+       HEADER NEGRU (full width)
+       ========================= */
+    .story-head{
+      background:var(--black);
+      color:var(--white);
+      padding:46px 0 34px;
+    }
+
+    .story-head .wrap{
+      padding:0 18px;     /* păstrează alinierea conținutului */
+      max-width:980px;    /* puțin mai aerisit sus */
+    }
+
     .kicker{
-      color:var(--accent);
+      color:rgba(255,255,255,.86);
       font-weight:700;
       letter-spacing:.11em;
       text-transform:uppercase;
@@ -58,13 +79,25 @@
     h1{
       font-size:2.55rem;
       line-height:1.12;
-      margin:0 0 12px;
+      margin:0 0 14px;
+      color:var(--white);
     }
 
+    /* “The Romanian Files” ca badge mov (optional, dar arată bine) */
     .meta{
-      color:var(--muted);
+      margin:0 0 18px;
+    }
+
+    .meta-chip{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:8px 12px;
+      border-radius:999px;
       font-size:.95rem;
-      margin:0 0 24px;
+      font-weight:700;
+      letter-spacing:.02em;
+      border:1px solid rgba(255,255,255,.18);
     }
 
     .accent-bar{
@@ -72,7 +105,14 @@
       height:4px;
       background:var(--accent);
       border-radius:999px;
-      margin:18px 0 34px;
+      margin:18px 0 0;
+    }
+
+    /* =========================
+       CONTINUT (alb, ca înainte)
+       ========================= */
+    .content{
+      padding-top:42px;
     }
 
     h2{
@@ -182,443 +222,457 @@
       font-size:.92rem;
       color:var(--muted);
     }
+
+    /* mic tweak pe mobile */
+    @media (max-width:640px){
+      .story-head{ padding:38px 0 28px; }
+      h1{ font-size:2.05rem; }
+      .story-head .wrap{ max-width:820px; }
+    }
   </style>
 </head>
 
 <body>
-<main class="wrap" id="top">
 
-  <div class="kicker">Investigație</div>
-  <h1>Nepotism și conflicte de interese: cazul Dianei și lui Lucian Baciuna</h1>
-  <div class="meta">The Romanian Files</div>
-  <div class="accent-bar"></div>
+  <!-- HEADER NEGRU (full width) -->
+  <header class="story-head" id="top">
+    <div class="wrap">
+      <div class="kicker">Investigație</div>
+      <h1>Nepotism și conflicte de interese: cazul Dianei și lui Lucian Baciuna</h1>
+      <div class="meta"><span class="meta-chip">The Romanian Files</span></div>
+      <div class="accent-bar"></div>
+    </div>
+  </header>
 
-  <!-- CUPRINS -->
-  <nav class="toc" aria-label="Cuprins">
-    <h3>Cuprins</h3>
-    <ul>
-      <li><a href="#cap1">Cine sunt Diana Ștefana Baciuna și Lucian Baciuna?</a></li>
-      <li><a href="#cap2">Numire controversată la Ministerul Culturii</a></li>
-      <li><a href="#cap3">“Familie de bugetivori”: multiple funcții plătite din bani publici</a></li>
-      <li><a href="#cap4">Lucian Baciuna aflat în conflict de interese...Angajat AMEPIP dar și președinte CA</a></li>
-      <li><a href="#cap5">Rețea de influență PNL: legături și personaje conexe</a></li>
-      <li><a href="#cap6">Concluzii și implicații</a></li>
-      <li><a href="#surse">Surse utilizate</a></li>
-    </ul>
-  </nav>
+  <!-- CONTINUT (alb) -->
+  <main class="wrap content">
 
-  <!-- TEXT (IDENTIC cu textul tău; doar citările sunt linkuri) -->
-  <h2 id="cap1">Cine sunt Diana Ștefana Baciuna și Lucian Baciuna?</h2>
+    <!-- CUPRINS -->
+    <nav class="toc" aria-label="Cuprins">
+      <h3>Cuprins</h3>
+      <ul>
+        <li><a href="#cap1">Cine sunt Diana Ștefana Baciuna și Lucian Baciuna?</a></li>
+        <li><a href="#cap2">Numire controversată la Ministerul Culturii</a></li>
+        <li><a href="#cap3">“Familie de bugetivori”: multiple funcții plătite din bani publici</a></li>
+        <li><a href="#cap4">Lucian Baciuna aflat în conflict de interese...Angajat AMEPIP dar și președinte CA</a></li>
+        <li><a href="#cap5">Rețea de influență PNL: legături și personaje conexe</a></li>
+        <li><a href="#cap6">Concluzii și implicații</a></li>
+        <li><a href="#surse">Surse utilizate</a></li>
+      </ul>
+    </nav>
 
-  <p class="lead">Diana-Ștefana Baciuna este un jurist de 35 de ani (originară din Roman, județul Neamț) ajunsă secretar de stat la Ministerul Culturii, deși nu are pregătire ori experiență în domeniul cultural<a class="cite" href="#ref-1">[1]</a><a class="cite" href="#ref-2">[2]</a>. Înaintea numirii, Diana Baciuna a activat strict în politică: a fost asistentă a europarlamentarului PNL Daniel Buda la Bruxelles (2015-2022) și consilier local PNL la Primăria Sectorului 4 București (2020-2022)<a class="cite" href="#ref-1">[1]</a><a class="cite" href="#ref-3">[3]</a>. De altfel, ea a intrat în PNL imediat după majorat, fiind înscrisă pe liste la europarlamentarele din 2014 la doar 18-19 ani<a class="cite" href="#ref-4">[4]</a>. Provenind dintr-o familie influentă politic, Diana este fiica omului de afaceri Ștefan Nicolae – membru vechi PNL Neamț și fost vicepreședinte județean, el însuși instalat politic la conducerea Direcției Regionale de Metrologie Bacău în 2013<a class="cite" href="#ref-5">[5]</a><a class="cite" href="#ref-6">[6]</a>. (Simptomatic, tatăl său a fost numit șef regional la Metrologie deși pregătirea lui era de inginer hidrotehnist, stârnind critici privind numirile pe criterii politice<a class="cite" href="#ref-7">[7]</a><a class="cite" href="#ref-8">[8]</a>.)</p>
+    <!-- TEXT (IDENTIC cu textul tău; doar citările sunt linkuri) -->
+    <h2 id="cap1">Cine sunt Diana Ștefana Baciuna și Lucian Baciuna?</h2>
 
-  <p>Diana Baciuna este căsătorită cu Mihai-Lucian Baciuna, un consilier juridic născut în 1990, al cărui parcurs profesional a depins tot de conexiunile politice. Lucian Baciuna a ocupat mai multe funcții sau sinecuri la instituții de stat și companii publice după 2020, odată cu ascensiunea PNL la guvernare<a class="cite" href="#ref-9">[9]</a>. În ultimii ani el a lucrat sau încasat venituri de la: Telecomunicații CFR SA, Compania Municipală Imobiliară București SA, Societatea Națională a Sării (Salrom) și Transelectrica SA<a class="cite" href="#ref-9">[9]</a><a class="cite" href="#ref-10">[10]</a>. În prezent (2025), Lucian Baciuna este consilier juridic superior în Agenția guvernamentală pentru Monitorizarea și Evaluarea Performanțelor Întreprinderilor Publice (AMEPIP)<a class="cite" href="#ref-11">[11]</a>, instituție în care a fost angajat la începutul anului 2025. Totodată – aspect potențial problematic – el figurează încă și ca președinte al Consiliului de Administrație al Companiei Municipale Imobiliare București, o funcție obținută în 2020 prin sprijin politic local<a class="cite" href="#ref-12">[12]</a>. Acest cumul ridică problema unei posibile incompatibilități sau conflict de interese, întrucât la AMEPIP Lucian ar trebui să monitorizeze performanța companiilor publice (precum cea imobiliară a Primăriei București) în timp ce el însuși prezidează una dintre ele.</p>
+    <p class="lead">Diana-Ștefana Baciuna este un jurist de 35 de ani (originară din Roman, județul Neamț) ajunsă secretar de stat la Ministerul Culturii, deși nu are pregătire ori experiență în domeniul cultural<a class="cite" href="#ref-1">[1]</a><a class="cite" href="#ref-2">[2]</a>. Înaintea numirii, Diana Baciuna a activat strict în politică: a fost asistentă a europarlamentarului PNL Daniel Buda la Bruxelles (2015-2022) și consilier local PNL la Primăria Sectorului 4 București (2020-2022)<a class="cite" href="#ref-1">[1]</a><a class="cite" href="#ref-3">[3]</a>. De altfel, ea a intrat în PNL imediat după majorat, fiind înscrisă pe liste la europarlamentarele din 2014 la doar 18-19 ani<a class="cite" href="#ref-4">[4]</a>. Provenind dintr-o familie influentă politic, Diana este fiica omului de afaceri Ștefan Nicolae – membru vechi PNL Neamț și fost vicepreședinte județean, el însuși instalat politic la conducerea Direcției Regionale de Metrologie Bacău în 2013<a class="cite" href="#ref-5">[5]</a><a class="cite" href="#ref-6">[6]</a>. (Simptomatic, tatăl său a fost numit șef regional la Metrologie deși pregătirea lui era de inginer hidrotehnist, stârnind critici privind numirile pe criterii politice<a class="cite" href="#ref-7">[7]</a><a class="cite" href="#ref-8">[8]</a>.)</p>
 
-  <h2 id="cap2">Numire controversată la Ministerul Culturii</h2>
+    <p>Diana Baciuna este căsătorită cu Mihai-Lucian Baciuna, un consilier juridic născut în 1990, al cărui parcurs profesional a depins tot de conexiunile politice. Lucian Baciuna a ocupat mai multe funcții sau sinecuri la instituții de stat și companii publice după 2020, odată cu ascensiunea PNL la guvernare<a class="cite" href="#ref-9">[9]</a>. În ultimii ani el a lucrat sau încasat venituri de la: Telecomunicații CFR SA, Compania Municipală Imobiliară București SA, Societatea Națională a Sării (Salrom) și Transelectrica SA<a class="cite" href="#ref-9">[9]</a><a class="cite" href="#ref-10">[10]</a>. În prezent (2025), Lucian Baciuna este consilier juridic superior în Agenția guvernamentală pentru Monitorizarea și Evaluarea Performanțelor Întreprinderilor Publice (AMEPIP)<a class="cite" href="#ref-11">[11]</a>, instituție în care a fost angajat la începutul anului 2025. Totodată – aspect potențial problematic – el figurează încă și ca președinte al Consiliului de Administrație al Companiei Municipale Imobiliare București, o funcție obținută în 2020 prin sprijin politic local<a class="cite" href="#ref-12">[12]</a>. Acest cumul ridică problema unei posibile incompatibilități sau conflict de interese, întrucât la AMEPIP Lucian ar trebui să monitorizeze performanța companiilor publice (precum cea imobiliară a Primăriei București) în timp ce el însuși prezidează una dintre ele.</p>
 
-  <p>Numirea Dianei Baciuna ca secretar de stat la Cultură în februarie 2022 a fost întâmpinată cu surprindere și indignare în mediul cultural, fiind percepută drept o recompensă politică nelegată de competențe<a class="cite" href="#ref-13">[13]</a><a class="cite" href="#ref-14">[14]</a>. Presa a subliniat că CV-ul ei nu conține nicio realizare sau studiu în domeniul cultural – cariera sa fiind axată exclusiv pe politică și juridic<a class="cite" href="#ref-1">[1]</a>. Cu alte cuvinte, Diana Baciuna este un exemplu de “bugetivor” crescut de partid, propulsat într-o funcție-cheie fără expertiza necesară<a class="cite" href="#ref-13">[13]</a><a class="cite" href="#ref-14">[14]</a>. Ea a fost impusă la Ministerul Culturii de organizația PNL (postul fiind eliberat de un alt liberal, Liviu Brătescu) ca parte a algoritmului politic, numirea fiind semnată de premierul de atunci, Nicolae Ciucă<a class="cite" href="#ref-15">[15]</a><a class="cite" href="#ref-16">[16]</a>.</p>
+    <h2 id="cap2">Numire controversată la Ministerul Culturii</h2>
 
-  <p>Rolul Ralucăi Turcan în această numire a fost unul direct. Turcan – pe atunci ministru interimar al Culturii – i-a delegat Dianei atribuții importante imediat ce a ajuns secretar de stat. De pildă, Turcan a mandatat-o să semneze documentele de transfer ale artefactelor de tezaur dacic către o expoziție din Olanda (Muzeul Drents, Assen)<a class="cite" href="#ref-17">[17]</a>. Acest episod avea să se transforme într-un scandal: în ianuarie 2025, mai multe artefacte dacice de aur și argint au fost furate din muzeul olandez, un furt grav de patrimoniu pe care Diana Baciuna l-a numit „o reală lovitură adusă istoriei noastre”<a class="cite" href="#ref-18">[18]</a>. Ea a organizat o conferință de presă la Muzeul Național de Istorie din București pentru a da explicații despre modul de organizare a expoziției și măsurile luate, încercând să atenueze criticile<a class="cite" href="#ref-19">[19]</a><a class="cite" href="#ref-20">[20]</a>. Totuși, incidentul a amplificat controversele privind competența sa: cum de a ajuns o juristă fără legătură cu patrimoniul să decidă soarta unor artefacte naționale inestimabile? – s-au întrebat retoric jurnaliștii<a class="cite" href="#ref-21">[21]</a><a class="cite" href="#ref-22">[22]</a>. Cazul a evidențiat politizarea funcțiilor din Ministerul Culturii și riscurile asociate, mai ales când numirile nu se bazează pe merit profesional<a class="cite" href="#ref-23">[23]</a><a class="cite" href="#ref-24">[24]</a>.</p>
+    <p>Numirea Dianei Baciuna ca secretar de stat la Cultură în februarie 2022 a fost întâmpinată cu surprindere și indignare în mediul cultural, fiind percepută drept o recompensă politică nelegată de competențe<a class="cite" href="#ref-13">[13]</a><a class="cite" href="#ref-14">[14]</a>. Presa a subliniat că CV-ul ei nu conține nicio realizare sau studiu în domeniul cultural – cariera sa fiind axată exclusiv pe politică și juridic<a class="cite" href="#ref-1">[1]</a>. Cu alte cuvinte, Diana Baciuna este un exemplu de “bugetivor” crescut de partid, propulsat într-o funcție-cheie fără expertiza necesară<a class="cite" href="#ref-13">[13]</a><a class="cite" href="#ref-14">[14]</a>. Ea a fost impusă la Ministerul Culturii de organizația PNL (postul fiind eliberat de un alt liberal, Liviu Brătescu) ca parte a algoritmului politic, numirea fiind semnată de premierul de atunci, Nicolae Ciucă<a class="cite" href="#ref-15">[15]</a><a class="cite" href="#ref-16">[16]</a>.</p>
 
-  <p>În apărarea sa, PNL a prezentat-o pe Diana Baciuna drept o tânără profesionistă “cu potențial”. Chiar Raluca Turcan declara în 2024: “Mă bucur că fac echipă cu Diana la Ministerul Culturii; este o foarte bună profesionistă”<a class="cite" href="#ref-25">[25]</a>. Criticii au considerat însă aceste aprecieri nefondate – o retorică de partid goală în fața evidenței că secretarul de stat nu avea nici expertiză în cultură, nici rezultate notabile în domeniu<a class="cite" href="#ref-14">[14]</a><a class="cite" href="#ref-26">[26]</a>. Numirea ei a fost percepută ca parte din “România nașilor”, un sistem în care loialitatea politică și relațiile de cumetrie primează în fața competenței reale<a class="cite" href="#ref-23">[23]</a>.</p>
+    <p>Rolul Ralucăi Turcan în această numire a fost unul direct. Turcan – pe atunci ministru interimar al Culturii – i-a delegat Dianei atribuții importante imediat ce a ajuns secretar de stat. De pildă, Turcan a mandatat-o să semneze documentele de transfer ale artefactelor de tezaur dacic către o expoziție din Olanda (Muzeul Drents, Assen)<a class="cite" href="#ref-17">[17]</a>. Acest episod avea să se transforme într-un scandal: în ianuarie 2025, mai multe artefacte dacice de aur și argint au fost furate din muzeul olandez, un furt grav de patrimoniu pe care Diana Baciuna l-a numit „o reală lovitură adusă istoriei noastre”<a class="cite" href="#ref-18">[18]</a>. Ea a organizat o conferință de presă la Muzeul Național de Istorie din București pentru a da explicații despre modul de organizare a expoziției și măsurile luate, încercând să atenueze criticile<a class="cite" href="#ref-19">[19]</a><a class="cite" href="#ref-20">[20]</a>. Totuși, incidentul a amplificat controversele privind competența sa: cum de a ajuns o juristă fără legătură cu patrimoniul să decidă soarta unor artefacte naționale inestimabile? – s-au întrebat retoric jurnaliștii<a class="cite" href="#ref-21">[21]</a><a class="cite" href="#ref-22">[22]</a>. Cazul a evidențiat politizarea funcțiilor din Ministerul Culturii și riscurile asociate, mai ales când numirile nu se bazează pe merit profesional<a class="cite" href="#ref-23">[23]</a><a class="cite" href="#ref-24">[24]</a>.</p>
 
-  <h2 id="cap3">“Familie de bugetivori”: multiple funcții plătite din bani publici</h2>
+    <p>În apărarea sa, PNL a prezentat-o pe Diana Baciuna drept o tânără profesionistă “cu potențial”. Chiar Raluca Turcan declara în 2024: “Mă bucur că fac echipă cu Diana la Ministerul Culturii; este o foarte bună profesionistă”<a class="cite" href="#ref-25">[25]</a>. Criticii au considerat însă aceste aprecieri nefondate – o retorică de partid goală în fața evidenței că secretarul de stat nu avea nici expertiză în cultură, nici rezultate notabile în domeniu<a class="cite" href="#ref-14">[14]</a><a class="cite" href="#ref-26">[26]</a>. Numirea ei a fost percepută ca parte din “România nașilor”, un sistem în care loialitatea politică și relațiile de cumetrie primează în fața competenței reale<a class="cite" href="#ref-23">[23]</a>.</p>
 
-  <p>O privire în declarațiile de avere confirmă că soții Baciuna au devenit rapid beneficiari ai sistemului de sinecuri de stat. În 2020, când Diana era doar consilier local la Sectorul 4 (funcție indemnizată modest), ambii soți își câștigau traiul în principal din munca de juriști în mediul privat<a class="cite" href="#ref-27">[27]</a><a class="cite" href="#ref-9">[9]</a>. La trei ani distanță, situația arată cu totul altfel: soțul este plătit din trei surse publice, iar Diana cumulează și ea venituri publice din mai multe direcții<a class="cite" href="#ref-9">[9]</a>. Presa i-a numit fără menajamente “o familie de bugetivori” – adică un cuplu care se hrănește copios de la buget<a class="cite" href="#ref-28">[28]</a>.</p>
+    <h2 id="cap3">“Familie de bugetivori”: multiple funcții plătite din bani publici</h2>
 
-  <p>Concret, în ultimul an fiscal, Mihai-Lucian Baciuna a încasat salarii de la Transelectrica (peste 120.000 lei anual ca angajat la compania națională de transport energie electrică) și de la Telecomunicații CFR<a class="cite" href="#ref-10">[10]</a><a class="cite" href="#ref-29">[29]</a>. În paralel, a fost remunerat ca membru în consilii de administrație: indemnizație de ~28.000 lei de la Compania Municipală Imobiliară București<a class="cite" href="#ref-30">[30]</a> și, anterior, o scurtă perioadă salariu și de la Societatea Națională a Sării (Salrom)<a class="cite" href="#ref-31">[31]</a><a class="cite" href="#ref-32">[32]</a>. Schimbările frecvente sugerează un tur al sinecurilor: în 2022 Baciuna era angajat la Salrom, dar în 2023 a trecut la Transelectrica (controlată tot de stat), în timp ce la sfârșitul lui 2024 s-a mutat la agenția AMEPIP (Secretariatul General al Guvernului) – de fiecare dată ocupând posturi bine plătite, obținute nu prin concurs deschis, ci prin numire sau relații politice.</p>
+    <p>O privire în declarațiile de avere confirmă că soții Baciuna au devenit rapid beneficiari ai sistemului de sinecuri de stat. În 2020, când Diana era doar consilier local la Sectorul 4 (funcție indemnizată modest), ambii soți își câștigau traiul în principal din munca de juriști în mediul privat<a class="cite" href="#ref-27">[27]</a><a class="cite" href="#ref-9">[9]</a>. La trei ani distanță, situația arată cu totul altfel: soțul este plătit din trei surse publice, iar Diana cumulează și ea venituri publice din mai multe direcții<a class="cite" href="#ref-9">[9]</a>. Presa i-a numit fără menajamente “o familie de bugetivori” – adică un cuplu care se hrănește copios de la buget<a class="cite" href="#ref-28">[28]</a>.</p>
 
-  <p>Nici Diana Baciuna nu s-a limitat la salariul de secretar de stat (~116.000 lei pe an)<a class="cite" href="#ref-33">[33]</a>. Conform declarației sale de avere, ea a fost plasată și în Consiliul de Administrație al Centrului Național de Învățământ Turistic SA, de unde a primit ~34.000 lei indemnizație<a class="cite" href="#ref-33">[33]</a>. Pe lângă acestea, a mai obținut aproape 20.000 lei ca membră în diverse comisii din București<a class="cite" href="#ref-34">[34]</a><a class="cite" href="#ref-35">[35]</a>. Această acumulare de venituri din mai multe surse publice într-un timp scurt denotă clientelismul politic clasic: odată ajunsă într-o funcție înaltă, partidul i-a oferit “pachete” suplimentare (poziții în CA-uri, comisii) ca formă de răsplată. Astfel, în doar câțiva ani, familia Baciuna a trecut de la venituri modeste din mediul privat la a încasa împreună sume importante din bani publici, grație numirilor obținute pe filieră de partid<a class="cite" href="#ref-9">[9]</a><a class="cite" href="#ref-28">[28]</a>.</p>
+    <p>Concret, în ultimul an fiscal, Mihai-Lucian Baciuna a încasat salarii de la Transelectrica (peste 120.000 lei anual ca angajat la compania națională de transport energie electrică) și de la Telecomunicații CFR<a class="cite" href="#ref-10">[10]</a><a class="cite" href="#ref-29">[29]</a>. În paralel, a fost remunerat ca membru în consilii de administrație: indemnizație de ~28.000 lei de la Compania Municipală Imobiliară București<a class="cite" href="#ref-30">[30]</a> și, anterior, o scurtă perioadă salariu și de la Societatea Națională a Sării (Salrom)<a class="cite" href="#ref-31">[31]</a><a class="cite" href="#ref-32">[32]</a>. Schimbările frecvente sugerează un tur al sinecurilor: în 2022 Baciuna era angajat la Salrom, dar în 2023 a trecut la Transelectrica (controlată tot de stat), în timp ce la sfârșitul lui 2024 s-a mutat la agenția AMEPIP (Secretariatul General al Guvernului) – de fiecare dată ocupând posturi bine plătite, obținute nu prin concurs deschis, ci prin numire sau relații politice.</p>
 
-  <h2 id="cap4">Lucian Baciuna aflat în conflict de interese...Angajat AMEPIP dar și președinte CA al Companiei Municipale Imobiliare București</h2>
+    <p>Nici Diana Baciuna nu s-a limitat la salariul de secretar de stat (~116.000 lei pe an)<a class="cite" href="#ref-33">[33]</a>. Conform declarației sale de avere, ea a fost plasată și în Consiliul de Administrație al Centrului Național de Învățământ Turistic SA, de unde a primit ~34.000 lei indemnizație<a class="cite" href="#ref-33">[33]</a>. Pe lângă acestea, a mai obținut aproape 20.000 lei ca membră în diverse comisii din București<a class="cite" href="#ref-34">[34]</a><a class="cite" href="#ref-35">[35]</a>. Această acumulare de venituri din mai multe surse publice într-un timp scurt denotă clientelismul politic clasic: odată ajunsă într-o funcție înaltă, partidul i-a oferit “pachete” suplimentare (poziții în CA-uri, comisii) ca formă de răsplată. Astfel, în doar câțiva ani, familia Baciuna a trecut de la venituri modeste din mediul privat la a încasa împreună sume importante din bani publici, grație numirilor obținute pe filieră de partid<a class="cite" href="#ref-9">[9]</a><a class="cite" href="#ref-28">[28]</a>.</p>
 
-  <p>Un exemplu de posibil conflict de interese este situația lui Lucian Baciuna la Compania Imobiliară București. El a fost numit în septembrie 2020 membru în CA al acestei societăți a Primăriei Capitalei (ulterior ales președinte al consiliului)<a class="cite" href="#ref-36">[36]</a>. Numirea a avut loc imediat după alegerile locale din 2020, când primar general devenea Nicușor Dan susținut de PNL – semn că PNL București și-a plasat oameni de încredere în conducerea companiilor municipale. Interesant e că adresa sa din actele companiei corespunde Sectorului 4 (str. Gramont), același domiciliu unde Baciuna și-a înregistrat firma privată de consultanță juridică<a class="cite" href="#ref-37">[37]</a><a class="cite" href="#ref-38">[38]</a>. Practic, soțul secretarului de stat a condus o firmă a Primăriei București (cu indemnizație ~3.000 lei lunar<a class="cite" href="#ref-39">[39]</a>) în același timp în care soția sa era consilier local în subordinea primarului general – o suprapunere de interese care ridică semne de întrebare privind integritatea. Situația a devenit și mai delicată în 2025, când Lucian Baciuna a trecut la Agenția care monitorizează performanța întreprinderilor publice (AMEPIP). El ar trebui acum, teoretic, să evalueze obiectiv companiile de stat și municipale, inclusiv pe cea pe care tot el o conduce în continuare ca președinte CA. Este dificil de imaginat cum poate cineva să fie simultan arbitru și jucător fără compromisuri de etică – aspect ce necesită clarificări din partea autorităților competente (precum Agenția Națională de Integritate).</p>
+    <h2 id="cap4">Lucian Baciuna aflat în conflict de interese...Angajat AMEPIP dar și președinte CA al Companiei Municipale Imobiliare București</h2>
 
-  <h2 id="cap5">Rețea de influență PNL: legături și personaje conexe</h2>
+    <p>Un exemplu de posibil conflict de interese este situația lui Lucian Baciuna la Compania Imobiliară București. El a fost numit în septembrie 2020 membru în CA al acestei societăți a Primăriei Capitalei (ulterior ales președinte al consiliului)<a class="cite" href="#ref-36">[36]</a>. Numirea a avut loc imediat după alegerile locale din 2020, când primar general devenea Nicușor Dan susținut de PNL – semn că PNL București și-a plasat oameni de încredere în conducerea companiilor municipale. Interesant e că adresa sa din actele companiei corespunde Sectorului 4 (str. Gramont), același domiciliu unde Baciuna și-a înregistrat firma privată de consultanță juridică<a class="cite" href="#ref-37">[37]</a><a class="cite" href="#ref-38">[38]</a>. Practic, soțul secretarului de stat a condus o firmă a Primăriei București (cu indemnizație ~3.000 lei lunar<a class="cite" href="#ref-39">[39]</a>) în același timp în care soția sa era consilier local în subordinea primarului general – o suprapunere de interese care ridică semne de întrebare privind integritatea. Situația a devenit și mai delicată în 2025, când Lucian Baciuna a trecut la Agenția care monitorizează performanța întreprinderilor publice (AMEPIP). El ar trebui acum, teoretic, să evalueze obiectiv companiile de stat și municipale, inclusiv pe cea pe care tot el o conduce în continuare ca președinte CA. Este dificil de imaginat cum poate cineva să fie simultan arbitru și jucător fără compromisuri de etică – aspect ce necesită clarificări din partea autorităților competente (precum Agenția Națională de Integritate).</p>
 
-  <p>Ascensiunea cuplului Baciuna este strâns legată de susținerea politică din interiorul PNL și de anturajul lor din partid – un anturaj presărat cu figuri controversate. Diana Baciuna datorează cariera sa în bună măsură mentorilor și nașilor politici care au promovat-o. Primul a fost eurodeputatul Daniel Buda, care “a lansat-o în politica mare” angajând-o drept consilier la Bruxelles și apoi propulsând-o pe listele PNL<a class="cite" href="#ref-40">[40]</a>. La nivel local în Neamț, sprijinul a venit de acasă: tatăl său, Ștefan Nicolae, lider liberal influent, i-a netezit intrarea în partid și i-a asigurat conexiuni. Ulterior, odată mutată în București, Diana s-a afiliat organizației PNL Sector 4, unde a urcat rapid. Până în 2024, ajunsese chiar prim-vicepreședinte PNL București, responsabil pe strategii politice și comunicare<a class="cite" href="#ref-41">[41]</a> – numărul doi în filiala capitalei, alături de viceprimarul Stelian Bujduveanu (prim-vicepreședinte pe politici publice)<a class="cite" href="#ref-41">[41]</a>. Alegerea sa în această funcție de vârf s-a făcut în aprilie 2024, când Sebastian Burduja a preluat președinția PNL București, semn că Diana Baciuna are sprijinul aripii conducătoare din partid<a class="cite" href="#ref-42">[42]</a><a class="cite" href="#ref-41">[41]</a>. De altfel, în perioada de tranziție de după eșecul PNL la localele din 2024, coordonarea filialei București a fost preluată de Hubert Thuma, influentul președinte al CJ Ilfov și baron local liberal<a class="cite" href="#ref-43">[43]</a><a class="cite" href="#ref-44">[44]</a>. Thuma (el însuși cunoscut pentru antecedente – o condamnare cu suspendare pentru corupție în 2013) a menținut strânsă legătura între PNL București și Ilfov, iar ascensiunea rapidă a Dianei Baciuna în organigrama de partid sugerează că face parte din echipa de fideli agreată de lideri precum Thuma, Burduja și Bujduveanu.</p>
+    <h2 id="cap5">Rețea de influență PNL: legături și personaje conexe</h2>
 
-  <p>La nivel local în Sectorul 4, Diana Baciuna s-a evidențiat ca una dintre puținele voci PNL de opoziție față de primarul PSD Daniel Băluță în mandatul 2020-2022. PNL și USR-PLUS obținuseră împreună o majoritate fragilă în consiliul local, intenția fiind să asigure unul din cei doi viceprimari. În ianuarie 2021, liberalii chiar au nominalizat-o pe Diana Baciună pentru funcția de viceprimar al Sectorului 4<a class="cite" href="#ref-45">[45]</a>. Însă șansa ei a fost subminată din interior: Robert Cristian Florea, colegul său consilier PNL, a trădat partidul și s-a aliat cu primarul Băluță, acceptând voturile PSD pentru a deveni el viceprimar. Episodul a stârnit scandal – Florea a fost exclus imediat din PNL ca “trădător”<a class="cite" href="#ref-46">[46]</a><a class="cite" href="#ref-47">[47]</a>. Manopera primarului PSD (care a impus votul într-o ședință contestată) a privat-o astfel pe Baciuna de postul de viceprimar și a fracturat opoziția de dreapta din Consiliul Local<a class="cite" href="#ref-46">[46]</a><a class="cite" href="#ref-48">[48]</a>. PNL Sector 4 a rămas în minoritate, dar Diana Baciuna a capitalizat politic acest conflict, pozând în liberală loială care a refuzat compromisul cu PSD. Ironia face însă ca, la scurt timp după excluderea lui Florea, soțul ei Lucian Baciuna să fie recompensat cu o poziție în conducerea Companiei Imobiliare a Primăriei Generale – o numire pe care primarul Băluță (PSD) nu ar fi putut o bloca, semn că tandemul Baciuna se bucura de susținere și dincolo de Sectorul 4.</p>
+    <p>Ascensiunea cuplului Baciuna este strâns legată de susținerea politică din interiorul PNL și de anturajul lor din partid – un anturaj presărat cu figuri controversate. Diana Baciuna datorează cariera sa în bună măsură mentorilor și nașilor politici care au promovat-o. Primul a fost eurodeputatul Daniel Buda, care “a lansat-o în politica mare” angajând-o drept consilier la Bruxelles și apoi propulsând-o pe listele PNL<a class="cite" href="#ref-40">[40]</a>. La nivel local în Neamț, sprijinul a venit de acasă: tatăl său, Ștefan Nicolae, lider liberal influent, i-a netezit intrarea în partid și i-a asigurat conexiuni. Ulterior, odată mutată în București, Diana s-a afiliat organizației PNL Sector 4, unde a urcat rapid. Până în 2024, ajunsese chiar prim-vicepreședinte PNL București, responsabil pe strategii politice și comunicare<a class="cite" href="#ref-41">[41]</a> – numărul doi în filiala capitalei, alături de viceprimarul Stelian Bujduveanu (prim-vicepreședinte pe politici publice)<a class="cite" href="#ref-41">[41]</a>. Alegerea sa în această funcție de vârf s-a făcut în aprilie 2024, când Sebastian Burduja a preluat președinția PNL București, semn că Diana Baciuna are sprijinul aripii conducătoare din partid<a class="cite" href="#ref-42">[42]</a><a class="cite" href="#ref-41">[41]</a>. De altfel, în perioada de tranziție de după eșecul PNL la localele din 2024, coordonarea filialei București a fost preluată de Hubert Thuma, influentul președinte al CJ Ilfov și baron local liberal<a class="cite" href="#ref-43">[43]</a><a class="cite" href="#ref-44">[44]</a>. Thuma (el însuși cunoscut pentru antecedente – o condamnare cu suspendare pentru corupție în 2013) a menținut strânsă legătura între PNL București și Ilfov, iar ascensiunea rapidă a Dianei Baciuna în organigrama de partid sugerează că face parte din echipa de fideli agreată de lideri precum Thuma, Burduja și Bujduveanu.</p>
 
-  <p>Relațiile Dianei Baciuna cu greii politici se extind și în afara Bucureștiului. De pildă, în organizația Neamț există o alianță neoficială între unii liberali și rețeaua foștilor lideri locali (inclusiv personaje controversate din vechiul PDL). Un exemplu: deputatul Laurențiu Leoreanu – fost primar în Roman – este un apropiat al tatălui său și a fost numit președinte interimar PNL Neamț în 2024<a class="cite" href="#ref-49">[49]</a><a class="cite" href="#ref-50">[50]</a>, asigurând continuitatea influenței familiei Nicolae/Baciuna în filiala natală. Totodată, soții Baciuna par conectați la oameni din zona de securitate: Diana a urmat în 2013-2014 cursuri la Institutul Diplomatic Român și Colegiul Național de Apărare, integrându-se în cercurile tinerilor politicieni cu relații în servicii<a class="cite" href="#ref-51">[51]</a>. Nu este de mirare că numele fostului director SRI Eduard Hellvig apare menționat în culise – Hellvig fiind și el un liberal din generația tânără care a promovat intens “pregătirea pe securitate” a cadrelor de partid (inclusiv cursurile IDR/Apărare pe care le-a urmat și Diana Baciuna)<a class="cite" href="#ref-51">[51]</a><a class="cite" href="#ref-52">[52]</a>. Deși nu există dovezi publice că Hellvig ar fi susținut direct familia Baciuna, conexiunile de acest tip fac parte din modul în care PNL și-a cultivat cadrele: trimițându-le la specializări pe lângă instituțiile de forță ale statului, pentru a-și crea rețele informale de sprijin.</p>
+    <p>La nivel local în Sectorul 4, Diana Baciuna s-a evidențiat ca una dintre puținele voci PNL de opoziție față de primarul PSD Daniel Băluță în mandatul 2020-2022. PNL și USR-PLUS obținuseră împreună o majoritate fragilă în consiliul local, intenția fiind să asigure unul din cei doi viceprimari. În ianuarie 2021, liberalii chiar au nominalizat-o pe Diana Baciună pentru funcția de viceprimar al Sectorului 4<a class="cite" href="#ref-45">[45]</a>. Însă șansa ei a fost subminată din interior: Robert Cristian Florea, colegul său consilier PNL, a trădat partidul și s-a aliat cu primarul Băluță, acceptând voturile PSD pentru a deveni el viceprimar. Episodul a stârnit scandal – Florea a fost exclus imediat din PNL ca “trădător”<a class="cite" href="#ref-46">[46]</a><a class="cite" href="#ref-47">[47]</a>. Manopera primarului PSD (care a impus votul într-o ședință contestată) a privat-o astfel pe Baciuna de postul de viceprimar și a fracturat opoziția de dreapta din Consiliul Local<a class="cite" href="#ref-46">[46]</a><a class="cite" href="#ref-48">[48]</a>. PNL Sector 4 a rămas în minoritate, dar Diana Baciuna a capitalizat politic acest conflict, pozând în liberală loială care a refuzat compromisul cu PSD. Ironia face însă ca, la scurt timp după excluderea lui Florea, soțul ei Lucian Baciuna să fie recompensat cu o poziție în conducerea Companiei Imobiliare a Primăriei Generale – o numire pe care primarul Băluță (PSD) nu ar fi putut o bloca, semn că tandemul Baciuna se bucura de susținere și dincolo de Sectorul 4.</p>
 
-  <p>Un alt personaj de menționat este Andrei Cristian Zamfiroi – coleg de organizație PNL Sector 4 cu Diana Baciuna. Zamfiroi a fost trezorier al PNL Sector 4 și a ocupat în paralel funcția de director comercial la ELCEN București (producătorul de energie termică al Capitalei)<a class="cite" href="#ref-53">[53]</a>. În 2023 el a fost plasat și ca administrator special la o companie municipală de termoficare, semn că făcea parte din același circuit de numiri politice. Însă cariera lui a luat o turnură negativă în 2025, când DNA l-a pus sub acuzare pentru luare de mită: Zamfiroi este cercetat pentru că ar fi intermediat primirea unei șpăgi de 40.000 lei de către directorul general al ELCEN, Claudiu Crețu, și ar mai fi pretins el însuși alți 50.000 lei de la un om de afaceri, tot în legătură cu contracte ELCEN<a class="cite" href="#ref-54">[54]</a><a class="cite" href="#ref-55">[55]</a>. Procurorii l-au trimis în judecată pe Zamfiroi pentru luare de mită și complicitate la luare de mită<a class="cite" href="#ref-56">[56]</a>. Acest scandal de corupție evidențiază pericolele favoritismului politic: Zamfiroi nu era un specialist recunoscut, ci un ins ajuns pe criterii de partid în conducerea unei companii strategice – iar tentația de a exploata poziția pentru câștig personal a fost mare. Mai grav, numele lui Zamfiroi a fost asociat în presă și cu o zonă de spionaj internațional: surse neoficiale susțin că acesta ar fi fost în anturajul unui fost ofițer SIS din Republica Moldova, Alexandru Bălan, care în 2025 a fost arestat în România fiind acuzat că furniza secrete către KGB-ul din Belarus<a class="cite" href="#ref-57">[57]</a><a class="cite" href="#ref-58">[58]</a>. Deși legătura directă dintre Zamfiroi și cazul Bălan nu este documentată public, simpla alăturare a numelor ilustrează gradul de infiltrare și vulnerabilitate al rețelelor de cumetrie politico-economice. (Cazul Bălan, fost șef adjunct al serviciului secret moldovean, are conotații grave de securitate națională – el deținând cetățenie română și fiind investigat de DIICOT pentru trădare prin spionaj<a class="cite" href="#ref-59">[59]</a><a class="cite" href="#ref-57">[57]</a>. Dacă se confirmă că Zamfiroi sau cercul său au interacționat cu un asemenea personaj, ar însemna că rețeaua PNL Sector 4 a fost expusă unor influențe profund nocive.)</p>
-
-  <p>În plus, în jurul soților Baciuna gravitează și tineri “lupi” liberali cu probleme penale. Un exemplu notoriu este Denis Ilinescu, actualmente președintele organizației de tineret TNL București. Ilinescu provine tot din filiala PNL Sector 4 și a fost propulsat în 2022 la șefia TNL București cu sprijinul direct al viceprimarului Stelian Bujduveanu și al lui Ciprian Ciucu (pe atunci lider PNL București)<a class="cite" href="#ref-60">[60]</a>. Nominalizarea lui a stârnit scandal deoarece Denis Ilinescu avea deja două dosare de droguri în antecedente: în 2018 a fost reținut pentru deținere de stupefiante (DIICOT a renunțat ulterior la urmărire, considerându-l “nepericulos”), iar în 2019 a fost din nou prins cu droguri asupra sa<a class="cite" href="#ref-61">[61]</a>. Ba chiar, același Ilinescu fusese cercetat și pentru conducere fără permis<a class="cite" href="#ref-62">[62]</a><a class="cite" href="#ref-61">[61]</a>. Cu toate acestea, PNL l-a promovat într-o funcție de reprezentare, trimițând un semnal îngrijorător despre standardele morale pe care le practică. La conferința de alegeri TNL, prim-ministrul de atunci Nicolae Ciucă și ministrul de Interne Lucian Bode s-au afișat alături de Denis Ilinescu, legitimându-l în ciuda “scheletelor din dulap”<a class="cite" href="#ref-60">[60]</a><a class="cite" href="#ref-63">[63]</a>. Pentru soții Baciuna, asocierea cu asemenea colegi ridică întrebări asupra calității cercului lor de susținători: într-un mediu unde tinerii lideri consumă droguri și iau decizii iresponsabile, cât de sincer se mai poate vorbi despre “profesionalism” și “meritocrație”?</p>
-
-  <p>O altă figură din filiala lor este Bogdan Ionuț Grecia, prim-vicepreședinte PNL Sector 4 și – întâmplător sau nu – coleg cu Lucian Baciuna la Transelectrica (unde ocupă postul de șef serviciu Audit Public Intern)<a class="cite" href="#ref-64">[64]</a>. Grecia a intrat recent în atenția publică deoarece a fost condamnat penal (pedeapsă de 1 an și 4 luni, cu amânarea aplicării) pentru conducerea unui vehicul sub influența alcoolului<a class="cite" href="#ref-64">[64]</a><a class="cite" href="#ref-65">[65]</a>. În iunie 2022, el a fost prins de poliție circulând beat pe o trotinetă electrică în București (alcoolemie peste 0,8‰), infracțiune pentru care judecătorii i-au impus și 60 de zile muncă în folosul comunității<a class="cite" href="#ref-66">[66]</a><a class="cite" href="#ref-67">[67]</a>. În pofida condamnării (rămasă definitivă în decembrie 2024), Bogdan Grecia nu a demisionat din funcția de conducere de la Transelectrica și nici din PNL – afirmând senin că postul său la compania de stat “nu este în pericol” și că oricum nu e funcționar public, deci nu vede o problemă<a class="cite" href="#ref-68">[68]</a><a class="cite" href="#ref-69">[69]</a>. Cazul său arată gradul de imunitate morală pe care și-l arogă clientela de partid: chiar prins în culpă și condamnat, un lider politic local preferă să rămână în poziții cheie, având încrederea că partidul îl va proteja. În fapt, Grecia a și candidat pe listele PNL pentru Camera Deputaților în 2024, chiar în timp ce avea procesul pe rol<a class="cite" href="#ref-64">[64]</a> – semn că nimeni din conducerea PNL n-a considerat nepotrivit să promoveze un astfel de personaj. Dat fiind că Bogdan Grecia era unul dintre liderii organizației Sector 4 în care activa și Diana Baciuna, se poate spune că standardele etice ale grupului erau extrem de coborâte.</p>
-
-  <p>Rezumând, rețeaua de conexiuni în jurul familiei Baciuna include politicieni de vârf care le-au facilitat cariera (Turcan, Buda, Thuma, Burduja, Bujduveanu), rude și apropiați implicați la rândul lor în numiri pe criterii de partid (tatăl Ștefan Nicolae, colegul Zamfiroi, etc.), dar și colegi de organizație implicați în fapte penale sau scandaluri (Denis Ilinescu cu drogurile, Bogdan Grecia cu alcoolul). Această pânză de relații explică ascensiunea lor rapidă, dar totodată ridică un semn de alarmă cu privire la integritatea actului de guvernare. Când într-un cerc politic toți “se știu cu toți” și se susțin orbește unii pe alții indiferent de abateri, riscul de corupție și incompetență devine sistemic.</p>
-
-  <h2 id="cap6">Concluzii și implicații</h2>
-
-  <p>Cazul soților Diana și Lucian Baciuna ilustrează în mod emblematic cumulul de probleme generate de nepotismul politic în România. Avem pe de o parte numiri înalte fără legătură cu competența – o tânără juristă fără experiență în cultură ajunge să gestioneze patrimoniul național, strict pentru că era loială partidului și recomandată de persoanele “potrivite”<a class="cite" href="#ref-14">[14]</a><a class="cite" href="#ref-23">[23]</a>. Pe de altă parte, vedem acumularea de funcții și venituri publice de către aceeași familie, într-un cerc închis de oameni de partid care își împart sinecuri și se plasează reciproc în poziții bine plătite<a class="cite" href="#ref-9">[9]</a><a class="cite" href="#ref-28">[28]</a>. Aceste practici nu doar că subminează meritocrația, dar creează și vulnerabilități grave: conflicte de interese (precum cel în care un evaluator al companiilor de stat este el însuși șef de companie publică) și scandaluri de corupție sau comportament ilegal (așa cum au apărut în jurul colegilor lor Zamfiroi, Ilinescu, Grecia ș.a.).</p>
-
-  <p>În esență, investigația asupra “cazului Baciuna” relevă un micro-sistem de cumetrii politice extins pe axa Neamț–București–Ilfov, în care funcțiile publice sunt tratate ca monedă de răsplată pentru servicii de partid. Acest sistem a permis ascensiunea rapidă a celor doi soți, dar în detrimentul interesului public: instituțiile unde au fost plasați riscă să sufere de pe urma lipsei lor de experiență (vezi Ministerul Culturii în gestionarea expoziției de tezaur) sau a preocupării mai degrabă pentru beneficii personale (vezi cazul companiilor de stat și municipale împovărate de salarii și indemnizații pentru clientela de partid).</p>
-
-  <p>Nu trebuie omis nici contextul mai larg: fenomenul “La Famiglia” – rețeaua de rude, nași, fini și protejați care populează aparatul de stat – este unul endemic. Un raport din 2023 arăta creșterea cu aproape 90.000 a angajaților la stat în 5 ani<a class="cite" href="#ref-70">[70]</a>, semn că fiecare guvernare a adus noi valuri de oameni “ai partidului” în funcții. Agenția Națională de Integritate constată frecvent cazuri de angajări în primării pe bază de rudenie sau incompatibilități flagrante (primari care își angajează copiii, soțiile, ginerii în instituțiile subordonate)<a class="cite" href="#ref-71">[71]</a><a class="cite" href="#ref-72">[72]</a>. Soții Baciuna, cu toată povestea lor, nu sunt o abatere izolată, ci un simptom al unui mod de a face politică ce s-a perpetuat de la nivel central până la cel local.</p>
-
-  <p>Pentru societate, mizele sunt uriașe. Când persoane nepotrivite ocupă poziții cheie, performanța instituțională scade și apar vulnerabilități: de exemplu, furtul artefactelor dacice din Olanda a fost posibil și din cauza organizării superficiale a expoziției, lucru admis chiar de ministrul Culturii<a class="cite" href="#ref-73">[73]</a><a class="cite" href="#ref-74">[74]</a>. Un profesionist veritabil ar fi putut anticipa riscurile, dar un numit politic nepregătit a “moștenit” pur și simplu responsabilitatea. Similar, în economie, numirea unor politruci în companii energetice poate conduce la acte de corupție ce pun în pericol securitatea energetică (cazul ELCEN).</p>
-
-  <p>Concluzia logică ce se impune din această investigație este nevoia de reformă reală a criteriilor de numire în funcțiile publice. Transparency International și alte organizații cer de multă vreme depolitizarea administrației și profesionalizarea managementului companiilor de stat. Exemplul Baciuna arată că, în absența unei voințe politice de a schimba aceste practici, vom continua să asistăm la rocade de cadre de partid: unii tineri “de perspectivă” vor fi promovați exclusiv pe baza carnetului de partid și a pilelor, în timp ce experții autentici rămân pe dinafară. PNL în speță – partid ce se revendică istoric pro-european și meritocrat – riscă să repete tarele vechilor partide de cumetrie, dezamăgind propriul electorat.</p>
-
-  <p>În final, cazul de față este o anchetă jurnalistică argumentată, bazată pe fapte și documente publice. Iar faptele conturează un pattern clar: clientelismul naște incompetență și corupție. Diana și Lucian Baciuna reprezintă un caz de manual al modului în care sistemul politic își recompensează fidelii și îi integrează într-o rețea transpartinică de interese, cu consecințe directe asupra guvernării. Rămâne de văzut dacă autoritățile vor sesiza elementele de incompatibilitate și conflict de interese din acest caz și dacă PNL (sau oricare alt partid) va înțelege să își schimbe modul de selecție a cadrelor. Altfel, istoria se va repeta, iar prețul va fi plătit, invariabil, de cetățeanul de rând – prin instituții ineficiente, pierderi de patrimoniu, servicii publice slabe și erodarea încrederii în clasa politică.</p>
-
-  <!-- SURSE -->
-  <section class="sources" id="surse">
-    <h2>Surse utilizate</h2>
-    <p class="note">Numerele din text sunt clickabile și te trimit la sursa corespunzătoare. Din fiecare sursă ai ↩ sus.</p>
-
-    <ol class="refs">
-      <li id="ref-1"><span class="ref-title">DCNews – “Cine e Diana Baciuna (PNL)...”</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-2"><span class="ref-title">Zin.ro – “Numire scandaloasă la Ministerul Culturii...”</span><br>
-        <a class="ref-url" href="https://zin.ro/22/02/2022/romania-nasilor/ministerul-culturii-diana-baciuna-secretar-de-stat-scandal-stefan-balici-lucian-romascanu/" target="_blank" rel="noopener">zin.ro/.../ministerul-culturii-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-3"><span class="ref-title">InfoCultural – “Diana Baciuna... Vezi CV-ul ei”</span><br>
-        <a class="ref-url" href="https://infocultural.eu/diana-baciuna-consilier-pnl-a-fost-numita-secretar-de-stat-la-ministerul-culturii-vezi-cv-ul-ei/" target="_blank" rel="noopener">infocultural.eu/.../diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <!-- Mapări (aceleași linkuri, dar cu ID-uri separate ca să funcționeze referințele din text) -->
-      <li id="ref-4"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-5"><span class="ref-title">Ziarul de Roman – Metrologie (Ștefan Nicolae)</span><br>
-        <a class="ref-url" href="https://www.ziarulderoman.ro/un-romascan-a-ajuns-sef-la-directia-regionala-de-metrologie/" target="_blank" rel="noopener">ziarulderoman.ro/un-romascan-a-ajuns-sef...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-6"><span class="ref-title">Ziarul de Roman – (aceeași sursă ca [5])</span><br>
-        <a class="ref-url" href="https://www.ziarulderoman.ro/un-romascan-a-ajuns-sef-la-directia-regionala-de-metrologie/" target="_blank" rel="noopener">ziarulderoman.ro/un-romascan-a-ajuns-sef...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-7"><span class="ref-title">Ziarul de Roman – (aceeași sursă ca [5])</span><br>
-        <a class="ref-url" href="https://www.ziarulderoman.ro/un-romascan-a-ajuns-sef-la-directia-regionala-de-metrologie/" target="_blank" rel="noopener">ziarulderoman.ro/un-romascan-a-ajuns-sef...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-8"><span class="ref-title">Ziarul de Roman – (aceeași sursă ca [5])</span><br>
-        <a class="ref-url" href="https://www.ziarulderoman.ro/un-romascan-a-ajuns-sef-la-directia-regionala-de-metrologie/" target="_blank" rel="noopener">ziarulderoman.ro/un-romascan-a-ajuns-sef...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-9"><span class="ref-title">Digi24 – “La Famiglia / Rețeaua Pile, Cuscri și Relații...”</span><br>
-        <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-10"><span class="ref-title">AMEPIP – Declarație de avere (DA-numire-1.pdf)</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-11"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-12"><span class="ref-title">CMIBSA – Conducere (Compania Municipală Imobiliară București)</span><br>
-        <a class="ref-url" href="https://www.cmibsa.ro/conducere/" target="_blank" rel="noopener">cmibsa.ro/conducere/</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-13"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-14"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-15"><span class="ref-title">InfoCultural – (aceeași sursă ca [3])</span><br>
-        <a class="ref-url" href="https://infocultural.eu/diana-baciuna-consilier-pnl-a-fost-numita-secretar-de-stat-la-ministerul-culturii-vezi-cv-ul-ei/" target="_blank" rel="noopener">infocultural.eu/.../diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-16"><span class="ref-title">InfoCultural – (aceeași sursă ca [3])</span><br>
-        <a class="ref-url" href="https://infocultural.eu/diana-baciuna-consilier-pnl-a-fost-numita-secretar-de-stat-la-ministerul-culturii-vezi-cv-ul-ei/" target="_blank" rel="noopener">infocultural.eu/.../diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-17"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-18"><span class="ref-title">Financial Intelligence – Furt artefacte (declarații)</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/furt-artefacte-secretar-de-stat-o-reala-lovitura-adusa-istoriei-noastre-ernest-oberlander-tarnoveanu-este-primul-atentat-cu-exploziv-primul-jaf-in-care-s-a-folosit-explozibil-in-cazul-unui-muze/" target="_blank" rel="noopener">financialintelligence.ro/furt-artefacte...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-19"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [18])</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/furt-artefacte-secretar-de-stat-o-reala-lovitura-adusa-istoriei-noastre-ernest-oberlander-tarnoveanu-este-primul-atentat-cu-exploziv-primul-jaf-in-care-s-a-folosit-explozibil-in-cazul-unui-muze/" target="_blank" rel="noopener">financialintelligence.ro/furt-artefacte...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-20"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [18])</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/furt-artefacte-secretar-de-stat-o-reala-lovitura-adusa-istoriei-noastre-ernest-oberlander-tarnoveanu-este-primul-atentat-cu-exploziv-primul-jaf-in-care-s-a-folosit-explozibil-in-cazul-unui-muze/" target="_blank" rel="noopener">financialintelligence.ro/furt-artefacte...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-21"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-22"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-23"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-24"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-25"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-26"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-27"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
-        <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-28"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-29"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-30"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-31"><span class="ref-title">Telecomunicații CFR – Declarație de avere (da29-Baciuna.pdf)</span><br>
-        <a class="ref-url" href="https://www.tccfr.ro/declaratii/a_2023/da29-Baciuna.pdf" target="_blank" rel="noopener">tccfr.ro/.../da29-Baciuna.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-32"><span class="ref-title">Telecomunicații CFR – (aceeași sursă ca [31])</span><br>
-        <a class="ref-url" href="https://www.tccfr.ro/declaratii/a_2023/da29-Baciuna.pdf" target="_blank" rel="noopener">tccfr.ro/.../da29-Baciuna.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-33"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-34"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-35"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-36"><span class="ref-title">CMIBSA – Hotărârea AGA (PDF)</span><br>
-        <a class="ref-url" href="https://www.cmibsa.ro/wp-content/uploads/2022/05/Hotararea-Adunarii-Generale-Extraordinara-a-Actionarilor-nr.-5-din-16-septembrie-2021.pdf" target="_blank" rel="noopener">cmibsa.ro/.../Hotararea-AGA.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-37"><span class="ref-title">AMEPIP – Declarație de interese (DI-numire-1.pdf)</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DI-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DI-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-38"><span class="ref-title">AMEPIP – (aceeași sursă ca [37])</span><br>
-        <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DI-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DI-numire-1.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-39"><span class="ref-title">Telecomunicații CFR – (aceeași sursă ca [31])</span><br>
-        <a class="ref-url" href="https://www.tccfr.ro/declaratii/a_2023/da29-Baciuna.pdf" target="_blank" rel="noopener">tccfr.ro/.../da29-Baciuna.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-40"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
-        <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-41"><span class="ref-title">Financial Intelligence – PNL București (Burduja, Bujduveanu, Baciuna)</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/biroul-politic-al-pnl-bucuresti-ales-sebastian-burduja-presedinte-stelian-bujduveanu-si-diana-baciuna-prim-vicepresedinti/" target="_blank" rel="noopener">financialintelligence.ro/biroul-politic...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-42"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [41])</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/biroul-politic-al-pnl-bucuresti-ales-sebastian-burduja-presedinte-stelian-bujduveanu-si-diana-baciuna-prim-vicepresedinti/" target="_blank" rel="noopener">financialintelligence.ro/biroul-politic...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-43"><span class="ref-title">Financial Intelligence – Hubert Thuma coordonează PNL București</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/hubert-thuma-va-coordona-filiala-pnl-bucuresti-pnl-a-desemnat-noi-coordonatori-si-la-filialele-bistrita-nasaud-galati-mures-dolj-neamt/" target="_blank" rel="noopener">financialintelligence.ro/hubert-thuma...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-44"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [43])</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/hubert-thuma-va-coordona-filiala-pnl-bucuresti-pnl-a-desemnat-noi-coordonatori-si-la-filialele-bistrita-nasaud-galati-mures-dolj-neamt/" target="_blank" rel="noopener">financialintelligence.ro/hubert-thuma...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-45"><span class="ref-title">News.ro – Excluderea lui Robert Cristian-Florea / viceprimar S4</span><br>
-        <a class="ref-url" href="https://www.news.ro/politic-intern/pnl-sector-4-a-decis-sa-il-excluda-din-partid-pe-robert-cristian-florea-ales-vineri-viceprimar-al-sectorului-cu-sprijinul-psd-1922402629502021011419937397" target="_blank" rel="noopener">news.ro/.../pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-46"><span class="ref-title">News.ro – (aceeași sursă ca [45])</span><br>
-        <a class="ref-url" href="https://www.news.ro/politic-intern/pnl-sector-4-a-decis-sa-il-excluda-din-partid-pe-robert-cristian-florea-ales-vineri-viceprimar-al-sectorului-cu-sprijinul-psd-1922402629502021011419937397" target="_blank" rel="noopener">news.ro/.../pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-47"><span class="ref-title">News.ro – (aceeași sursă ca [45])</span><br>
-        <a class="ref-url" href="https://www.news.ro/politic-intern/pnl-sector-4-a-decis-sa-il-excluda-din-partid-pe-robert-cristian-florea-ales-vineri-viceprimar-al-sectorului-cu-sprijinul-psd-1922402629502021011419937397" target="_blank" rel="noopener">news.ro/.../pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-48"><span class="ref-title">News.ro – (aceeași sursă ca [45])</span><br>
-        <a class="ref-url" href="https://www.news.ro/politic-intern/pnl-sector-4-a-decis-sa-il-excluda-din-partid-pe-robert-cristian-florea-ales-vineri-viceprimar-al-sectorului-cu-sprijinul-psd-1922402629502021011419937397" target="_blank" rel="noopener">news.ro/.../pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-49"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [43])</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/hubert-thuma-va-coordona-filiala-pnl-bucuresti-pnl-a-desemnat-noi-coordonatori-si-la-filialele-bistrita-nasaud-galati-mures-dolj-neamt/" target="_blank" rel="noopener">financialintelligence.ro/hubert-thuma...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-50"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [43])</span><br>
-        <a class="ref-url" href="https://financialintelligence.ro/hubert-thuma-va-coordona-filiala-pnl-bucuresti-pnl-a-desemnat-noi-coordonatori-si-la-filialele-bistrita-nasaud-galati-mures-dolj-neamt/" target="_blank" rel="noopener">financialintelligence.ro/hubert-thuma...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-51"><span class="ref-title">Fanatik – “Guvernul generalului Ciucă, plin de specialiști în securitate națională...”</span><br>
-        <a class="ref-url" href="https://www.fanatik.ro/guvernul-generalului-ciuca-plin-de-specialisti-in-securitate-nationala-orice-animal-politic-care-vrea-sa-promoveze-se-gandeste-ca-ii-prinde-bine-un-astfel-de-curs-20103407" target="_blank" rel="noopener">fanatik.ro/guvernul-generalului...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-52"><span class="ref-title">Fanatik – (aceeași sursă ca [51])</span><br>
-        <a class="ref-url" href="https://www.fanatik.ro/guvernul-generalului-ciuca-plin-de-specialisti-in-securitate-nationala-orice-animal-politic-care-vrea-sa-promoveze-se-gandeste-ca-ii-prinde-bine-un-astfel-de-curs-20103407" target="_blank" rel="noopener">fanatik.ro/guvernul-generalului...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-53"><span class="ref-title">PressHub (Facebook) – Zamfiroi trezorier PNL S4</span><br>
-        <a class="ref-url" href="https://www.facebook.com/PressHubRomania/posts/andrei-cristian-cornel-zamfiroi-este-trezorier-al-pnl-sector-4-%C8%99i-membru-al-biro/1385936766870218/" target="_blank" rel="noopener">facebook.com/PressHubRomania/...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-54"><span class="ref-title">TVR – Doi directori ELCEN trimiși în judecată de DNA</span><br>
-        <a class="ref-url" href="https://tvrinfo.ro/doi-directori-ai-elcen-bucuresti-trimisi-in-judecata-de-dna-pentru-luare-de-mita/" target="_blank" rel="noopener">tvrinfo.ro/doi-directori...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-55"><span class="ref-title">TVR – (aceeași sursă ca [54])</span><br>
-        <a class="ref-url" href="https://tvrinfo.ro/doi-directori-ai-elcen-bucuresti-trimisi-in-judecata-de-dna-pentru-luare-de-mita/" target="_blank" rel="noopener">tvrinfo.ro/doi-directori...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-56"><span class="ref-title">TVR – (aceeași sursă ca [54])</span><br>
-        <a class="ref-url" href="https://tvrinfo.ro/doi-directori-ai-elcen-bucuresti-trimisi-in-judecata-de-dna-pentru-luare-de-mita/" target="_blank" rel="noopener">tvrinfo.ro/doi-directori...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-57"><span class="ref-title">Ziua.md – Alexandru Bălan (context)</span><br>
-        <a class="ref-url" href="https://ziua.md/video-fostul-sef-adjunct-al-sis-alexandru-balan-acuzat-ca-ar-fi-divulgat-secrete-de-stat-ale-romaniei-catre-kgb-audiat-la-diicot/" target="_blank" rel="noopener">ziua.md/video-fostul-sef...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-58"><span class="ref-title">Ziua.md – (aceeași sursă ca [57])</span><br>
-        <a class="ref-url" href="https://ziua.md/video-fostul-sef-adjunct-al-sis-alexandru-balan-acuzat-ca-ar-fi-divulgat-secrete-de-stat-ale-romaniei-catre-kgb-audiat-la-diicot/" target="_blank" rel="noopener">ziua.md/video-fostul-sef...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-59"><span class="ref-title">Romania Journal – “Ex-Moldovan SIS Chief Accused...”</span><br>
-        <a class="ref-url" href="https://www.romaniajournal.ro/society-people/law-crime/ex-moldovan-sis-chief-accused-of-passing-secrets-to-belarus-kgb/" target="_blank" rel="noopener">romaniajournal.ro/.../ex-moldovan...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-60"><span class="ref-title">Zin.ro – Denis Ilinescu (TNL București) / droguri</span><br>
-        <a class="ref-url" href="https://zin.ro/12/07/2022/politica/presedinte-tnl-bucuresti-denis-ilinescu-diicot-anchetat-posesie-droguri/" target="_blank" rel="noopener">zin.ro/12/07/2022/politica/...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-61"><span class="ref-title">Zin.ro – (aceeași sursă ca [60])</span><br>
-        <a class="ref-url" href="https://zin.ro/12/07/2022/politica/presedinte-tnl-bucuresti-denis-ilinescu-diicot-anchetat-posesie-droguri/" target="_blank" rel="noopener">zin.ro/12/07/2022/politica/...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-62"><span class="ref-title">Zin.ro – (aceeași sursă ca [60])</span><br>
-        <a class="ref-url" href="https://zin.ro/12/07/2022/politica/presedinte-tnl-bucuresti-denis-ilinescu-diicot-anchetat-posesie-droguri/" target="_blank" rel="noopener">zin.ro/12/07/2022/politica/...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-63"><span class="ref-title">Zin.ro – (aceeași sursă ca [60])</span><br>
-        <a class="ref-url" href="https://zin.ro/12/07/2022/politica/presedinte-tnl-bucuresti-denis-ilinescu-diicot-anchetat-posesie-droguri/" target="_blank" rel="noopener">zin.ro/12/07/2022/politica/...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-64"><span class="ref-title">G4Media – Bogdan Ionuț Grecia (condamnare)</span><br>
-        <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-65"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
-        <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-66"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
-        <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-67"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
-        <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-68"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
-        <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-69"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
-        <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-70"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
-        <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-71"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
-        <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-72"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
-        <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <li id="ref-73"><span class="ref-title">AGERPRES – Furt artefacte (declarații / context)</span><br>
-        <a class="ref-url" href="https://agerpres.ro/cultura-media/2025/01/26/furt-artefacte-secretar-de-stat-diana-stefana-baciuna-o-reala-lovitura-adusa-istoriei-noastre--1416255" target="_blank" rel="noopener">agerpres.ro/cultura-media/2025/01/26/furt-artefacte...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-74"><span class="ref-title">AGERPRES – (aceeași sursă ca [73])</span><br>
-        <a class="ref-url" href="https://agerpres.ro/cultura-media/2025/01/26/furt-artefacte-secretar-de-stat-diana-stefana-baciuna-o-reala-lovitura-adusa-istoriei-noastre--1416255" target="_blank" rel="noopener">agerpres.ro/cultura-media/2025/01/26/furt-artefacte...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-
-      <!-- Intrări de compatibilitate pentru numere care apar în lista ta, ca să nu “moară” referințe viitoare -->
-      <li id="ref-75"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
-        <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-76"><span class="ref-title">InfoCultural – (aceeași sursă ca [3])</span><br>
-        <a class="ref-url" href="https://infocultural.eu/diana-baciuna-consilier-pnl-a-fost-numita-secretar-de-stat-la-ministerul-culturii-vezi-cv-ul-ei/" target="_blank" rel="noopener">infocultural.eu/.../diana-baciuna...</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-      <li id="ref-77"><span class="ref-title">Telecomunicații CFR – (aceeași sursă ca [31])</span><br>
-        <a class="ref-url" href="https://www.tccfr.ro/declaratii/a_2023/da29-Baciuna.pdf" target="_blank" rel="noopener">tccfr.ro/.../da29-Baciuna.pdf</a>
-        <a class="backtop" href="#top">↩ sus</a>
-      </li>
-    </ol>
-
-    <footer>
-      © The Romanian Files · Investigație jurnalistică bazată pe documente și surse publice
-    </footer>
-  </section>
-
-</main>
+    <p>Relațiile Dianei Baciuna cu greii politici se extind și în afara Bucureștiului. De pildă, în organizația Neamț există o alianță neoficială între unii liberali și rețeaua foștilor lideri locali (inclusiv personaje controversate din vechiul PDL). Un exemplu: deputatul Laurențiu Leoreanu – fost primar în Roman – este un apropiat al tatălui său și a fost numit președinte interimar PNL Neamț în 2024<a class="cite" href="#ref-49">[49]</a><a class="cite" href="#ref-50">[50]</a>, asigurând continuitatea influenței familiei Nicolae/Baciuna în filiala natală. Totodată, soții Baciuna par conectați la oameni din zona de securitate: Diana a urmat în 2013-2014 cursuri la Institutul Diplomatic Român și Colegiul Național de Apărare, integrându-se în cercurile tinerilor politicieni cu relații în servicii<a class="cite" href="#ref-51">[51]</a>. Nu este de mirare că numele fostului director SRI Eduard Hellvig apare menționat în culise – Hellvig fiind și el un liberal din generația tânără care a promovat intens “pregătirea pe securitate” a cadrelor de partid (inclusiv cursurile IDR/Apărare pe care le-a urmat și Diana Baciuna)<a class="cite" href="#ref-51">[51]</a><a class="cite" href="#ref-52">[52]</a>. Deși nu există dovezi publice că Hellvig ar fi susținut direct familia Baciuna, conexiunile de acest tip fac parte din modul în care PNL și-a cultivat cadrele: trimițându-le la specializări pe lângă instituțiile de forță ale statului, pentru a-și crea rețele informale de sprijin.</p>
+
+    <p>Un alt personaj de menționat este Andrei Cristian Zamfiroi – coleg de organizație PNL Sector 4 cu Diana Baciuna. Zamfiroi a fost trezorier al PNL Sector 4 și a ocupat în paralel funcția de director comercial la ELCEN București (producătorul de energie termică al Capitalei)<a class="cite" href="#ref-53">[53]</a>. În 2023 el a fost plasat și ca administrator special la o companie municipală de termoficare, semn că făcea parte din același circuit de numiri politice. Însă cariera lui a luat o turnură negativă în 2025, când DNA l-a pus sub acuzare pentru luare de mită: Zamfiroi este cercetat pentru că ar fi intermediat primirea unei șpăgi de 40.000 lei de către directorul general al ELCEN, Claudiu Crețu, și ar mai fi pretins el însuși alți 50.000 lei de la un om de afaceri, tot în legătură cu contracte ELCEN<a class="cite" href="#ref-54">[54]</a><a class="cite" href="#ref-55">[55]</a>. Procurorii l-au trimis în judecată pe Zamfiroi pentru luare de mită și complicitate la luare de mită<a class="cite" href="#ref-56">[56]</a>. Acest scandal de corupție evidențiază pericolele favoritismului politic: Zamfiroi nu era un specialist recunoscut, ci un ins ajuns pe criterii de partid în conducerea unei companii strategice – iar tentația de a exploata poziția pentru câștig personal a fost mare. Mai grav, numele lui Zamfiroi a fost asociat în presă și cu o zonă de spionaj internațional: surse neoficiale susțin că acesta ar fi fost în anturajul unui fost ofițer SIS din Republica Moldova, Alexandru Bălan, care în 2025 a fost arestat în România fiind acuzat că furniza secrete către KGB-ul din Belarus<a class="cite" href="#ref-57">[57]</a><a class="cite" href="#ref-58">[58]</a>. Deși legătura directă dintre Zamfiroi și cazul Bălan nu este documentată public, simpla alăturare a numelor ilustrează gradul de infiltrare și vulnerabilitate al rețelelor de cumetrie politico-economice. (Cazul Bălan, fost șef adjunct al serviciului secret moldovean, are conotații grave de securitate națională – el deținând cetățenie română și fiind investigat de DIICOT pentru trădare prin spionaj<a class="cite" href="#ref-59">[59]</a><a class="cite" href="#ref-57">[57]</a>. Dacă se confirmă că Zamfiroi sau cercul său au interacționat cu un asemenea personaj, ar însemna că rețeaua PNL Sector 4 a fost expusă unor influențe profund nocive.)</p>
+
+    <p>În plus, în jurul soților Baciuna gravitează și tineri “lupi” liberali cu probleme penale. Un exemplu notoriu este Denis Ilinescu, actualmente președintele organizației de tineret TNL București. Ilinescu provine tot din filiala PNL Sector 4 și a fost propulsat în 2022 la șefia TNL București cu sprijinul direct al viceprimarului Stelian Bujduveanu și al lui Ciprian Ciucu (pe atunci lider PNL București)<a class="cite" href="#ref-60">[60]</a>. Nominalizarea lui a stârnit scandal deoarece Denis Ilinescu avea deja două dosare de droguri în antecedente: în 2018 a fost reținut pentru deținere de stupefiante (DIICOT a renunțat ulterior la urmărire, considerându-l “nepericulos”), iar în 2019 a fost din nou prins cu droguri asupra sa<a class="cite" href="#ref-61">[61]</a>. Ba chiar, același Ilinescu fusese cercetat și pentru conducere fără permis<a class="cite" href="#ref-62">[62]</a><a class="cite" href="#ref-61">[61]</a>. Cu toate acestea, PNL l-a promovat într-o funcție de reprezentare, trimițând un semnal îngrijorător despre standardele morale pe care le practică. La conferința de alegeri TNL, prim-ministrul de atunci Nicolae Ciucă și ministrul de Interne Lucian Bode s-au afișat alături de Denis Ilinescu, legitimându-l în ciuda “scheletelor din dulap”<a class="cite" href="#ref-60">[60]</a><a class="cite" href="#ref-63">[63]</a>. Pentru soții Baciuna, asocierea cu asemenea colegi ridică întrebări asupra calității cercului lor de susținători: într-un mediu unde tinerii lideri consumă droguri și iau decizii iresponsabile, cât de sincer se mai poate vorbi despre “profesionalism” și “meritocrație”?</p>
+
+    <p>O altă figură din filiala lor este Bogdan Ionuț Grecia, prim-vicepreședinte PNL Sector 4 și – întâmplător sau nu – coleg cu Lucian Baciuna la Transelectrica (unde ocupă postul de șef serviciu Audit Public Intern)<a class="cite" href="#ref-64">[64]</a>. Grecia a intrat recent în atenția publică deoarece a fost condamnat penal (pedeapsă de 1 an și 4 luni, cu amânarea aplicării) pentru conducerea unui vehicul sub influența alcoolului<a class="cite" href="#ref-64">[64]</a><a class="cite" href="#ref-65">[65]</a>. În iunie 2022, el a fost prins de poliție circulând beat pe o trotinetă electrică în București (alcoolemie peste 0,8‰), infracțiune pentru care judecătorii i-au impus și 60 de zile muncă în folosul comunității<a class="cite" href="#ref-66">[66]</a><a class="cite" href="#ref-67">[67]</a>. În pofida condamnării (rămasă definitivă în decembrie 2024), Bogdan Grecia nu a demisionat din funcția de conducere de la Transelectrica și nici din PNL – afirmând senin că postul său la compania de stat “nu este în pericol” și că oricum nu e funcționar public, deci nu vede o problemă<a class="cite" href="#ref-68">[68]</a><a class="cite" href="#ref-69">[69]</a>. Cazul său arată gradul de imunitate morală pe care și-l arogă clientela de partid: chiar prins în culpă și condamnat, un lider politic local preferă să rămână în poziții cheie, având încrederea că partidul îl va proteja. În fapt, Grecia a și candidat pe listele PNL pentru Camera Deputaților în 2024, chiar în timp ce avea procesul pe rol<a class="cite" href="#ref-64">[64]</a> – semn că nimeni din conducerea PNL n-a considerat nepotrivit să promoveze un astfel de personaj. Dat fiind că Bogdan Grecia era unul dintre liderii organizației Sector 4 în care activa și Diana Baciuna, se poate spune că standardele etice ale grupului erau extrem de coborâte.</p>
+
+    <p>Rezumând, rețeaua de conexiuni în jurul familiei Baciuna include politicieni de vârf care le-au facilitat cariera (Turcan, Buda, Thuma, Burduja, Bujduveanu), rude și apropiați implicați la rândul lor în numiri pe criterii de partid (tatăl Ștefan Nicolae, colegul Zamfiroi, etc.), dar și colegi de organizație implicați în fapte penale sau scandaluri (Denis Ilinescu cu drogurile, Bogdan Grecia cu alcoolul). Această pânză de relații explică ascensiunea lor rapidă, dar totodată ridică un semn de alarmă cu privire la integritatea actului de guvernare. Când într-un cerc politic toți “se știu cu toți” și se susțin orbește unii pe alții indiferent de abateri, riscul de corupție și incompetență devine sistemic.</p>
+
+    <h2 id="cap6">Concluzii și implicații</h2>
+
+    <p>Cazul soților Diana și Lucian Baciuna ilustrează în mod emblematic cumulul de probleme generate de nepotismul politic în România. Avem pe de o parte numiri înalte fără legătură cu competența – o tânără juristă fără experiență în cultură ajunge să gestioneze patrimoniul național, strict pentru că era loială partidului și recomandată de persoanele “potrivite”<a class="cite" href="#ref-14">[14]</a><a class="cite" href="#ref-23">[23]</a>. Pe de altă parte, vedem acumularea de funcții și venituri publice de către aceeași familie, într-un cerc închis de oameni de partid care își împart sinecuri și se plasează reciproc în poziții bine plătite<a class="cite" href="#ref-9">[9]</a><a class="cite" href="#ref-28">[28]</a>. Aceste practici nu doar că subminează meritocrația, dar creează și vulnerabilități grave: conflicte de interese (precum cel în care un evaluator al companiilor de stat este el însuși șef de companie publică) și scandaluri de corupție sau comportament ilegal (așa cum au apărut în jurul colegilor lor Zamfiroi, Ilinescu, Grecia ș.a.).</p>
+
+    <p>În esență, investigația asupra “cazului Baciuna” relevă un micro-sistem de cumetrii politice extins pe axa Neamț–București–Ilfov, în care funcțiile publice sunt tratate ca monedă de răsplată pentru servicii de partid. Acest sistem a permis ascensiunea rapidă a celor doi soți, dar în detrimentul interesului public: instituțiile unde au fost plasați riscă să sufere de pe urma lipsei lor de experiență (vezi Ministerul Culturii în gestionarea expoziției de tezaur) sau a preocupării mai degrabă pentru beneficii personale (vezi cazul companiilor de stat și municipale împovărate de salarii și indemnizații pentru clientela de partid).</p>
+
+    <p>Nu trebuie omis nici contextul mai larg: fenomenul “La Famiglia” – rețeaua de rude, nași, fini și protejați care populează aparatul de stat – este unul endemic. Un raport din 2023 arăta creșterea cu aproape 90.000 a angajaților la stat în 5 ani<a class="cite" href="#ref-70">[70]</a>, semn că fiecare guvernare a adus noi valuri de oameni “ai partidului” în funcții. Agenția Națională de Integritate constată frecvent cazuri de angajări în primării pe bază de rudenie sau incompatibilități flagrante (primari care își angajează copiii, soțiile, ginerii în instituțiile subordonate)<a class="cite" href="#ref-71">[71]</a><a class="cite" href="#ref-72">[72]</a>. Soții Baciuna, cu toată povestea lor, nu sunt o abatere izolată, ci un simptom al unui mod de a face politică ce s-a perpetuat de la nivel central până la cel local.</p>
+
+    <p>Pentru societate, mizele sunt uriașe. Când persoane nepotrivite ocupă poziții cheie, performanța instituțională scade și apar vulnerabilități: de exemplu, furtul artefactelor dacice din Olanda a fost posibil și din cauza organizării superficiale a expoziției, lucru admis chiar de ministrul Culturii<a class="cite" href="#ref-73">[73]</a><a class="cite" href="#ref-74">[74]</a>. Un profesionist veritabil ar fi putut anticipa riscurile, dar un numit politic nepregătit a “moștenit” pur și simplu responsabilitatea. Similar, în economie, numirea unor politruci în companii energetice poate conduce la acte de corupție ce pun în pericol securitatea energetică (cazul ELCEN).</p>
+
+    <p>Concluzia logică ce se impune din această investigație este nevoia de reformă reală a criteriilor de numire în funcțiile publice. Transparency International și alte organizații cer de multă vreme depolitizarea administrației și profesionalizarea managementului companiilor de stat. Exemplul Baciuna arată că, în absența unei voințe politice de a schimba aceste practici, vom continua să asistăm la rocade de cadre de partid: unii tineri “de perspectivă” vor fi promovați exclusiv pe baza carnetului de partid și a pilelor, în timp ce experții autentici rămân pe dinafară. PNL în speță – partid ce se revendică istoric pro-european și meritocrat – riscă să repete tarele vechilor partide de cumetrie, dezamăgind propriul electorat.</p>
+
+    <p>În final, cazul de față este o anchetă jurnalistică argumentată, bazată pe fapte și documente publice. Iar faptele conturează un pattern clar: clientelismul naște incompetență și corupție. Diana și Lucian Baciuna reprezintă un caz de manual al modului în care sistemul politic își recompensează fidelii și îi integrează într-o rețea transpartinică de interese, cu consecințe directe asupra guvernării. Rămâne de văzut dacă autoritățile vor sesiza elementele de incompatibilitate și conflict de interese din acest caz și dacă PNL (sau oricare alt partid) va înțelege să își schimbe modul de selecție a cadrelor. Altfel, istoria se va repeta, iar prețul va fi plătit, invariabil, de cetățeanul de rând – prin instituții ineficiente, pierderi de patrimoniu, servicii publice slabe și erodarea încrederii în clasa politică.</p>
+
+    <!-- SURSE -->
+    <section class="sources" id="surse">
+      <h2>Surse utilizate</h2>
+      <p class="note">Numerele din text sunt clickabile și te trimit la sursa corespunzătoare. Din fiecare sursă ai ↩ sus.</p>
+
+      <!-- LISTA TA DE SURSE (nemodificată) -->
+      <ol class="refs">
+        <li id="ref-1"><span class="ref-title">DCNews – “Cine e Diana Baciuna (PNL)...”</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-2"><span class="ref-title">Zin.ro – “Numire scandaloasă la Ministerul Culturii...”</span><br>
+          <a class="ref-url" href="https://zin.ro/22/02/2022/romania-nasilor/ministerul-culturii-diana-baciuna-secretar-de-stat-scandal-stefan-balici-lucian-romascanu/" target="_blank" rel="noopener">zin.ro/.../ministerul-culturii-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-3"><span class="ref-title">InfoCultural – “Diana Baciuna... Vezi CV-ul ei”</span><br>
+          <a class="ref-url" href="https://infocultural.eu/diana-baciuna-consilier-pnl-a-fost-numita-secretar-de-stat-la-ministerul-culturii-vezi-cv-ul-ei/" target="_blank" rel="noopener">infocultural.eu/.../diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <!-- Mapări (aceleași linkuri, dar cu ID-uri separate ca să funcționeze referințele din text) -->
+        <li id="ref-4"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-5"><span class="ref-title">Ziarul de Roman – Metrologie (Ștefan Nicolae)</span><br>
+          <a class="ref-url" href="https://www.ziarulderoman.ro/un-romascan-a-ajuns-sef-la-directia-regionala-de-metrologie/" target="_blank" rel="noopener">ziarulderoman.ro/un-romascan-a-ajuns-sef...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-6"><span class="ref-title">Ziarul de Roman – (aceeași sursă ca [5])</span><br>
+          <a class="ref-url" href="https://www.ziarulderoman.ro/un-romascan-a-ajuns-sef-la-directia-regionala-de-metrologie/" target="_blank" rel="noopener">ziarulderoman.ro/un-romascan-a-ajuns-sef...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-7"><span class="ref-title">Ziarul de Roman – (aceeași sursă ca [5])</span><br>
+          <a class="ref-url" href="https://www.ziarulderoman.ro/un-romascan-a-ajuns-sef-la-directia-regionala-de-metrologie/" target="_blank" rel="noopener">ziarulderoman.ro/un-romascan-a-ajuns-sef...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-8"><span class="ref-title">Ziarul de Roman – (aceeași sursă ca [5])</span><br>
+          <a class="ref-url" href="https://www.ziarulderoman.ro/un-romascan-a-ajuns-sef-la-directia-regionala-de-metrologie/" target="_blank" rel="noopener">ziarulderoman.ro/un-romascan-a-ajuns-sef...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-9"><span class="ref-title">Digi24 – “La Famiglia / Rețeaua Pile, Cuscri și Relații...”</span><br>
+          <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-10"><span class="ref-title">AMEPIP – Declarație de avere (DA-numire-1.pdf)</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-11"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-12"><span class="ref-title">CMIBSA – Conducere (Compania Municipală Imobiliară București)</span><br>
+          <a class="ref-url" href="https://www.cmibsa.ro/conducere/" target="_blank" rel="noopener">cmibsa.ro/conducere/</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-13"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-14"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-15"><span class="ref-title">InfoCultural – (aceeași sursă ca [3])</span><br>
+          <a class="ref-url" href="https://infocultural.eu/diana-baciuna-consilier-pnl-a-fost-numita-secretar-de-stat-la-ministerul-culturii-vezi-cv-ul-ei/" target="_blank" rel="noopener">infocultural.eu/.../diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-16"><span class="ref-title">InfoCultural – (aceeași sursă ca [3])</span><br>
+          <a class="ref-url" href="https://infocultural.eu/diana-baciuna-consilier-pnl-a-fost-numita-secretar-de-stat-la-ministerul-culturii-vezi-cv-ul-ei/" target="_blank" rel="noopener">infocultural.eu/.../diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-17"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-18"><span class="ref-title">Financial Intelligence – Furt artefacte (declarații)</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/furt-artefacte-secretar-de-stat-o-reala-lovitura-adusa-istoriei-noastre-ernest-oberlander-tarnoveanu-este-primul-atentat-cu-exploziv-primul-jaf-in-care-s-a-folosit-explozibil-in-cazul-unui-muze/" target="_blank" rel="noopener">financialintelligence.ro/furt-artefacte...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-19"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [18])</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/furt-artefacte-secretar-de-stat-o-reala-lovitura-adusa-istoriei-noastre-ernest-oberlander-tarnoveanu-este-primul-atentat-cu-exploziv-primul-jaf-in-care-s-a-folosit-explozibil-in-cazul-unui-muze/" target="_blank" rel="noopener">financialintelligence.ro/furt-artefacte...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-20"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [18])</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/furt-artefacte-secretar-de-stat-o-reala-lovitura-adusa-istoriei-noastre-ernest-oberlander-tarnoveanu-este-primul-atentat-cu-exploziv-primul-jaf-in-care-s-a-folosit-explozibil-in-cazul-unui-muze/" target="_blank" rel="noopener">financialintelligence.ro/furt-artefacte...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-21"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-22"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-23"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-24"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-25"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-26"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-27"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
+          <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-28"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-29"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-30"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-31"><span class="ref-title">Telecomunicații CFR – Declarație de avere (da29-Baciuna.pdf)</span><br>
+          <a class="ref-url" href="https://www.tccfr.ro/declaratii/a_2023/da29-Baciuna.pdf" target="_blank" rel="noopener">tccfr.ro/.../da29-Baciuna.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-32"><span class="ref-title">Telecomunicații CFR – (aceeași sursă ca [31])</span><br>
+          <a class="ref-url" href="https://www.tccfr.ro/declaratii/a_2023/da29-Baciuna.pdf" target="_blank" rel="noopener">tccfr.ro/.../da29-Baciuna.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-33"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-34"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-35"><span class="ref-title">AMEPIP – (aceeași sursă ca [10])</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DA-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DA-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-36"><span class="ref-title">CMIBSA – Hotărârea AGA (PDF)</span><br>
+          <a class="ref-url" href="https://www.cmibsa.ro/wp-content/uploads/2022/05/Hotararea-Adunarii-Generale-Extraordinara-a-Actionarilor-nr.-5-din-16-septembrie-2021.pdf" target="_blank" rel="noopener">cmibsa.ro/.../Hotararea-AGA.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-37"><span class="ref-title">AMEPIP – Declarație de interese (DI-numire-1.pdf)</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DI-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DI-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-38"><span class="ref-title">AMEPIP – (aceeași sursă ca [37])</span><br>
+          <a class="ref-url" href="https://amepip.gov.ro/wp-content/uploads/2025/02/DI-numire-1.pdf" target="_blank" rel="noopener">amepip.gov.ro/.../DI-numire-1.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-39"><span class="ref-title">Telecomunicații CFR – (aceeași sursă ca [31])</span><br>
+          <a class="ref-url" href="https://www.tccfr.ro/declaratii/a_2023/da29-Baciuna.pdf" target="_blank" rel="noopener">tccfr.ro/.../da29-Baciuna.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-40"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
+          <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-41"><span class="ref-title">Financial Intelligence – PNL București (Burduja, Bujduveanu, Baciuna)</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/biroul-politic-al-pnl-bucuresti-ales-sebastian-burduja-presedinte-stelian-bujduveanu-si-diana-baciuna-prim-vicepresedinti/" target="_blank" rel="noopener">financialintelligence.ro/biroul-politic...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-42"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [41])</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/biroul-politic-al-pnl-bucuresti-ales-sebastian-burduja-presedinte-stelian-bujduveanu-si-diana-baciuna-prim-vicepresedinti/" target="_blank" rel="noopener">financialintelligence.ro/biroul-politic...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-43"><span class="ref-title">Financial Intelligence – Hubert Thuma coordonează PNL București</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/hubert-thuma-va-coordona-filiala-pnl-bucuresti-pnl-a-desemnat-noi-coordonatori-si-la-filialele-bistrita-nasaud-galati-mures-dolj-neamt/" target="_blank" rel="noopener">financialintelligence.ro/hubert-thuma...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-44"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [43])</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/hubert-thuma-va-coordona-filiala-pnl-bucuresti-pnl-a-desemnat-noi-coordonatori-si-la-filialele-bistrita-nasaud-galati-mures-dolj-neamt/" target="_blank" rel="noopener">financialintelligence.ro/hubert-thuma...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-45"><span class="ref-title">News.ro – Excluderea lui Robert Cristian-Florea / viceprimar S4</span><br>
+          <a class="ref-url" href="https://www.news.ro/politic-intern/pnl-sector-4-a-decis-sa-il-excluda-din-partid-pe-robert-cristian-florea-ales-vineri-viceprimar-al-sectorului-cu-sprijinul-psd-1922402629502021011419937397" target="_blank" rel="noopener">news.ro/.../pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-46"><span class="ref-title">News.ro – (aceeași sursă ca [45])</span><br>
+          <a class="ref-url" href="https://www.news.ro/politic-intern/pnl-sector-4-a-decis-sa-il-excluda-din-partid-pe-robert-cristian-florea-ales-vineri-viceprimar-al-sectorului-cu-sprijinul-psd-1922402629502021011419937397" target="_blank" rel="noopener">news.ro/.../pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-47"><span class="ref-title">News.ro – (aceeași sursă ca [45])</span><br>
+          <a class="ref-url" href="https://www.news.ro/politic-intern/pnl-sector-4-a-decis-sa-il-excluda-din-partid-pe-robert-cristian-florea-ales-vineri-viceprimar-al-sectorului-cu-sprijinul-psd-1922402629502021011419937397" target="_blank" rel="noopener">news.ro/.../pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-48"><span class="ref-title">News.ro – (aceeași sursă ca [45])</span><br>
+          <a class="ref-url" href="https://www.news.ro/politic-intern/pnl-sector-4-a-decis-sa-il-excluda-din-partid-pe-robert-cristian-florea-ales-vineri-viceprimar-al-sectorului-cu-sprijinul-psd-1922402629502021011419937397" target="_blank" rel="noopener">news.ro/.../pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-49"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [43])</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/hubert-thuma-va-coordona-filiala-pnl-bucuresti-pnl-a-desemnat-noi-coordonatori-si-la-filialele-bistrita-nasaud-galati-mures-dolj-neamt/" target="_blank" rel="noopener">financialintelligence.ro/hubert-thuma...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-50"><span class="ref-title">Financial Intelligence – (aceeași sursă ca [43])</span><br>
+          <a class="ref-url" href="https://financialintelligence.ro/hubert-thuma-va-coordona-filiala-pnl-bucuresti-pnl-a-desemnat-noi-coordonatori-si-la-filialele-bistrita-nasaud-galati-mures-dolj-neamt/" target="_blank" rel="noopener">financialintelligence.ro/hubert-thuma...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-51"><span class="ref-title">Fanatik – “Guvernul generalului Ciucă, plin de specialiști în securitate națională...”</span><br>
+          <a class="ref-url" href="https://www.fanatik.ro/guvernul-generalului-ciuca-plin-de-specialisti-in-securitate-nationala-orice-animal-politic-care-vrea-sa-promoveze-se-gandeste-ca-ii-prinde-bine-un-astfel-de-curs-20103407" target="_blank" rel="noopener">fanatik.ro/guvernul-generalului...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-52"><span class="ref-title">Fanatik – (aceeași sursă ca [51])</span><br>
+          <a class="ref-url" href="https://www.fanatik.ro/guvernul-generalului-ciuca-plin-de-specialisti-in-securitate-nationala-orice-animal-politic-care-vrea-sa-promoveze-se-gandeste-ca-ii-prinde-bine-un-astfel-de-curs-20103407" target="_blank" rel="noopener">fanatik.ro/guvernul-generalului...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-53"><span class="ref-title">PressHub (Facebook) – Zamfiroi trezorier PNL S4</span><br>
+          <a class="ref-url" href="https://www.facebook.com/PressHubRomania/posts/andrei-cristian-cornel-zamfiroi-este-trezorier_al-pnl-sector-4-%C8%99i-membru-al-biro/1385936766870218/" target="_blank" rel="noopener">facebook.com/PressHubRomania/...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-54"><span class="ref-title">TVR – Doi directori ELCEN trimiși în judecată de DNA</span><br>
+          <a class="ref-url" href="https://tvrinfo.ro/doi-directori-ai-elcen-bucuresti-trimisi-in-judecata-de-dna-pentru-luare-de-mita/" target="_blank" rel="noopener">tvrinfo.ro/doi-directori...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-55"><span class="ref-title">TVR – (aceeași sursă ca [54])</span><br>
+          <a class="ref-url" href="https://tvrinfo.ro/doi-directori-ai-elcen-bucuresti-trimisi-in-judecata-de-dna-pentru-luare-de-mita/" target="_blank" rel="noopener">tvrinfo.ro/doi-directori...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-56"><span class="ref-title">TVR – (aceeași sursă ca [54])</span><br>
+          <a class="ref-url" href="https://tvrinfo.ro/doi-directori-ai-elcen-bucuresti-trimisi-in-judecata-de-dna-pentru-luare-de-mita/" target="_blank" rel="noopener">tvrinfo.ro/doi-directori...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-57"><span class="ref-title">Ziua.md – Alexandru Bălan (context)</span><br>
+          <a class="ref-url" href="https://ziua.md/video-fostul-sef-adjunct-al-sis-alexandru-balan-acuzat-ca-ar-fi-divulgat-secrete-de-stat-ale-romaniei-catre-kgb-audiat-la-diicot/" target="_blank" rel="noopener">ziua.md/video-fostul-sef...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-58"><span class="ref-title">Ziua.md – (aceeași sursă ca [57])</span><br>
+          <a class="ref-url" href="https://ziua.md/video-fostul-sef-adjunct-al-sis-alexandru-balan-acuzat-ca-ar-fi-divulgat-secrete-de-stat-ale-romaniei-catre-kgb-audiat-la-diicot/" target="_blank" rel="noopener">ziua.md/video-fostul-sef...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-59"><span class="ref-title">Romania Journal – “Ex-Moldovan SIS Chief Accused...”</span><br>
+          <a class="ref-url" href="https://www.romaniajournal.ro/society-people/law-crime/ex-moldovan-sis-chief-accused-of-passing-secrets-to-belarus-kgb/" target="_blank" rel="noopener">romaniajournal.ro/.../ex-moldovan...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-60"><span class="ref-title">Zin.ro – Denis Ilinescu (TNL București) / droguri</span><br>
+          <a class="ref-url" href="https://zin.ro/12/07/2022/politica/presedinte-tnl-bucuresti-denis-ilinescu-diicot-anchetat-posesie-droguri/" target="_blank" rel="noopener">zin.ro/12/07/2022/politica/...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-61"><span class="ref-title">Zin.ro – (aceeași sursă ca [60])</span><br>
+          <a class="ref-url" href="https://zin.ro/12/07/2022/politica/presedinte-tnl-bucuresti-denis-ilinescu-diicot-anchetat-posesie-droguri/" target="_blank" rel="noopener">zin.ro/12/07/2022/politica/...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-62"><span class="ref-title">Zin.ro – (aceeași sursă ca [60])</span><br>
+          <a class="ref-url" href="https://zin.ro/12/07/2022/politica/presedinte-tnl-bucuresti-denis-ilinescu-diicot-anchetat-posesie-droguri/" target="_blank" rel="noopener">zin.ro/12/07/2022/politica/...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-63"><span class="ref-title">Zin.ro – (aceeași sursă ca [60])</span><br>
+          <a class="ref-url" href="https://zin.ro/12/07/2022/politica/presedinte-tnl-bucuresti-denis-ilinescu-diicot-anchetat-posesie-droguri/" target="_blank" rel="noopener">zin.ro/12/07/2022/politica/...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-64"><span class="ref-title">G4Media – Bogdan Ionuț Grecia (condamnare)</span><br>
+          <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-65"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
+          <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-66"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
+          <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-67"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
+          <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-68"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
+          <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-69"><span class="ref-title">G4Media – (aceeași sursă ca [64])</span><br>
+          <a class="ref-url" href="https://www.g4media.ro/lider-pnl-sector-4-bucuresti-cu-functie-in-compania-de-stat-transelectrica-condamnat-penal-pentru-ca-a-fost-prins-conducand-o-trotineta-electrica-cu-o-alcoolemie-de-peste-080-la-mie.html" target="_blank" rel="noopener">g4media.ro/lider-pnl-sector-4...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-70"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
+          <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-71"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
+          <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-72"><span class="ref-title">Digi24 – (aceeași sursă ca [9])</span><br>
+          <a class="ref-url" href="https://www.digi24.ro/stiri/actualitate/politica/la-famiglia-reteaua-de-rude-si-protejate-pe-care-guvernul-ar-trebui-s-o-restructureze-dar-greu-de-crezut-c-o-va-face-2-2526361" target="_blank" rel="noopener">digi24.ro/.../la-famiglia...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-73"><span class="ref-title">AGERPRES – Furt artefacte (declarații / context)</span><br>
+          <a class="ref-url" href="https://agerpres.ro/cultura-media/2025/01/26/furt-artefacte-secretar-de-stat-diana-stefana-baciuna-o-reala-lovitura-adusa-istoriei-noastre--1416255" target="_blank" rel="noopener">agerpres.ro/cultura-media/2025/01/26/furt-artefacte...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-74"><span class="ref-title">AGERPRES – (aceeași sursă ca [73])</span><br>
+          <a class="ref-url" href="https://agerpres.ro/cultura-media/2025/01/26/furt-artefacte-secretar-de-stat-diana-stefana-baciuna-o-reala-lovitura-adusa-istoriei-noastre--1416255" target="_blank" rel="noopener">agerpres.ro/cultura-media/2025/01/26/furt-artefacte...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+
+        <li id="ref-75"><span class="ref-title">DCNews – (aceeași sursă ca [1])</span><br>
+          <a class="ref-url" href="https://www.dcnews.ro/cine-e-diana-baciuna-pnl-cum-a-dat-raluca-turcan-artefactele-dacice-pe-mana-unei-juriste-cu-legatura-zero-in-domeniul-culturii_984820.html" target="_blank" rel="noopener">dcnews.ro/.../cine-e-diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-76"><span class="ref-title">InfoCultural – (aceeași sursă ca [3])</span><br>
+          <a class="ref-url" href="https://infocultural.eu/diana-baciuna-consilier-pnl-a-fost-numita-secretar-de-stat-la-ministerul-culturii-vezi-cv-ul-ei/" target="_blank" rel="noopener">infocultural.eu/.../diana-baciuna...</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+        <li id="ref-77"><span class="ref-title">Telecomunicații CFR – (aceeași sursă ca [31])</span><br>
+          <a class="ref-url" href="https://www.tccfr.ro/declaratii/a_2023/da29-Baciuna.pdf" target="_blank" rel="noopener">tccfr.ro/.../da29-Baciuna.pdf</a>
+          <a class="backtop" href="#top">↩ sus</a>
+        </li>
+      </ol>
+
+      <footer>
+        © The Romanian Files · Investigație jurnalistică bazată pe documente și surse publice
+      </footer>
+    </section>
+
+  </main>
 </body>
 </html>
